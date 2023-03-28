@@ -1,0 +1,142 @@
+.dashboard{
+    width: 253px;
+    height: 46px;
+    margin-left: 64px;
+    margin-top: 60px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.first-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.info-photo{
+    margin-left: 180px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.diagnostic-photo{
+    margin-left: 400px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.radiology-photo{
+    margin-left: 400px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.first-row-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.diagnostic-button{
+    width: 246px;
+    height: 19px;
+    margin-left: 310px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.info-button{
+    width: 174px;
+    height: 38px;
+    margin-left: 155px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.radiology-button{
+    width: 174px;
+    height: 38px;
+    margin-left: 310px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.second-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.history-photo{
+    margin-left: 180px;
+    margin-top: 80px;
+    width: 119px;
+    height: 109px;
+}
+
+.setting-photo{
+    margin-left: 400px;
+    margin-top: 80px;
+    width: 119px;
+    height: 109px;
+}
+
+.second-row-buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.history-button{
+    width: 174px;
+    height: 38px;
+    margin-left: 155px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.settings-button{
+    width: 246px;
+    height: 19px;
+    margin-left: 310px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}

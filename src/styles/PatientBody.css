@@ -1,0 +1,142 @@
+.dashboard-patient{
+    width: 253px;
+    height: 46px;
+    margin-left: 64px;
+    margin-top: 60px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.first-row-patient{
+    display: flex;
+    flex-direction: row;
+}
+
+.treatment-photo{
+    margin-left: 180px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.diagnostic-photo-patient{
+    margin-left: 400px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.analysis-photo{
+    margin-left: 400px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.first-row-buttons-patient{
+    display: flex;
+    flex-direction: row;
+}
+
+.treatment-button{
+    width: 246px;
+    height: 19px;
+    margin-left: 130px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.diagnostic-button-patient{
+    width: 174px;
+    height: 38px;
+    margin-left: 300px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.analysis-button{
+    width: 174px;
+    height: 38px;
+    margin-left: 350px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.second-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.history-photo-patient{
+    margin-left: 180px;
+    margin-top: 80px;
+    width: 119px;
+    height: 109px;
+}
+
+.setting-photo-patient{
+    margin-left: 400px;
+    margin-top: 80px;
+    width: 119px;
+    height: 109px;
+}
+
+.second-row-buttons-patient{
+    display: flex;
+    flex-direction: row;
+}
+
+.history-button-patient{
+    width: 174px;
+    height: 38px;
+    margin-left: 155px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.settings-button-patient{
+    width: 246px;
+    height: 19px;
+    margin-left: 310px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}

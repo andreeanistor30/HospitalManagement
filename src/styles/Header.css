@@ -1,0 +1,40 @@
+.div-header{
+    width: 1536px;
+    height: 50px;
+    margin-left: 0px;
+    margin-top: 0px;
+    background: #ABC4FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: row;
+}
+
+.header-image{
+    width: 45px;
+    height: 43px;
+    margin-left: 13px;
+    margin-top: 6px;
+}
+
+.header-text{
+    width: 56px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.logout-button{
+    width: 100px;
+    height: 30px;
+    margin-left: 1264px;
+    margin-top: 10px;
+    background: #CCDBFD;
+    border: none;
+    border-radius: 10px;
+}
