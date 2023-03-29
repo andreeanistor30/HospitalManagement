@@ -1,0 +1,88 @@
+.dashboard-nurse{
+    width: 253px;
+    height: 46px;
+    margin-left: 64px;
+    margin-top: 60px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.first-row-nurse{
+    display: flex;
+    flex-direction: row;
+}
+
+.add-photo{
+    margin-left: 180px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.remove-photo{
+    margin-left: 400px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.setting-photo{
+    margin-left: 400px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.first-row-buttons-nurse{
+    display: flex;
+    flex-direction: row;
+}
+
+.add-button{
+    width: 246px;
+    height: 19px;
+    margin-left: 120px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.remove-button{
+    width: 174px;
+    height: 38px;
+    margin-left: 310px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.setting-button{
+    width: 174px;
+    height: 38px;
+    margin-left: 350px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
