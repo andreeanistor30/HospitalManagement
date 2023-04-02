@@ -1,0 +1,33 @@
+.dropdown{
+    display: flex;
+    flex-direction: row;
+}
+
+.search{
+    background-color: #CCDBFD;
+    width: 120px;
+    height: 34px;
+    margin-top:100px;
+    margin-left:50px;
+    border:none;
+
+}
+
+.search-input{
+    margin-left:0;
+    margin-top:100px;
+    background-color: #EDF2FB;
+    border:none;
+    width: 300px;
+    height: 34px;
+
+}
+
+.search-button{
+    margin-left:0;
+    margin-top:100px;
+    background-color: #ABC4FF;
+    border:none;
+    width: 150px;
+    height: 34px;
+}

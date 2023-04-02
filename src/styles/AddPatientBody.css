@@ -1,0 +1,420 @@
+.personal-details{
+    width: 184px;
+    height: 33px;
+    margin-left: 47px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    color: black;
+
+}
+
+.line{
+    width: 1500px;
+    height: 0px;
+    margin-left: 8px;
+    margin-top: 0px;
+    border-color: rgba(128, 128, 128, 0.49);
+    border-width: thin;
+    border-style: solid;
+    transform: rotate(-0.12deg);
+}
+
+.firstname{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.firstname-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.firstname-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 30px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.identity-no{
+    width: 94px;
+    height: 24px;
+    margin-left: 400px;
+    margin-top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.identityno-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 30px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.lastname-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.lastname{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.lastname-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.occupation{
+    width: 94px;
+    height: 24px;
+    margin-left: 400px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.occupation-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.dateofbirth-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.dateofbirth{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.dateofbirth-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.gender{
+    width: 94px;
+    height: 24px;
+    margin-left: 400px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.gender-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.maritalstatus-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.maritalstatus{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.maritalstatus-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.nationality{
+    width: 94px;
+    height: 24px;
+    margin-left: 400px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.nationality-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.religion-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.religion{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.religion-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.email{
+    width: 94px;
+    height: 24px;
+    margin-left: 400px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.email-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.home-address{
+    width: 184px;
+    height: 33px;
+    margin-left: 47px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    color: black;
+}
+
+.city-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.city{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.city-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 30px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.district{
+    width: 94px;
+    height: 24px;
+    margin-left: 400px;
+    margin-top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.district-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 30px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.address-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.address{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.address-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.phone-number{
+    width: 94px;
+    height: 24px;
+    margin-left: 400px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.phone-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.postalcode-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.postal-code{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.postalcode-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.save-button{
+    width: 150px;
+    height: 40px;
+    margin-left: 1300px;
+    margin-top: 20px;
+    background: #CCDBFD;
+    border: none;
+    border-radius: 7px;
+}
+
