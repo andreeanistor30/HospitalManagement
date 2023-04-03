@@ -1,0 +1,82 @@
+.tablerow-div{
+    display: flex;
+    flex-direction: row;
+    background-color: #EDF2FB;
+    width: 1364px;
+    height: 35px;
+    margin-left: 50px;
+    margin-top: 0px;
+}
+
+.first-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 64px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.firstname{
+    width: 14px;
+    height: 26px;
+    margin-left: 185px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.lastname{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.diagnostic{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.doctor{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space:nowrap;
+}
+
+.image{
+    width:20px;
+    height: 20px;
+    margin-left:200px;
+    margin-top: 5px;
+}

@@ -1,0 +1,74 @@
+.header-div{
+    width: 1364px;
+    height: 35px;
+    margin-left: 50px;
+    margin-top: 100px;
+    background: #D7E3FC;
+    display: flex;
+    flex-direction: row;
+}
+
+.first-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 64px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.firstname-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 185px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.lastname-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.diagnostic-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.doctor-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+}

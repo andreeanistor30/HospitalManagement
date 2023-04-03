@@ -8,6 +8,7 @@ import NurseMainPage from './pages/NurseMainPage';
 import NurseAddPatientPage from './pages/NurseAddPatientPage';
 import NurseDischargePatientPage from './pages/NurseDischargePatientPage';
 import Settings from './pages/SettingsPage';
+import ChangePasswordPage from './pages/ChangePasswordPage'
 function App() {
   return (
     <div>
@@ -20,6 +21,7 @@ function App() {
           <Route exact path='/addpatient' element={<NurseAddPatientPage />}></Route>
           <Route exact path='/dischargepatient' element={<NurseDischargePatientPage />}></Route>
           <Route exact path='/settings' element={<Settings />}></Route>
+          <Route exact path='/changePassword' element={<ChangePasswordPage />}></Route>
         </Routes>
       </Router>
       </div>
