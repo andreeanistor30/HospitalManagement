@@ -30,7 +30,7 @@
     height: 109px;
 }
 
-.radiology-photo{
+.laboratory-photo{
     margin-left: 400px;
     margin-top: 40px;
     width: 119px;
@@ -72,7 +72,7 @@
     border: none;
 }
 
-.radiology-button{
+.laboratory-button{
     width: 174px;
     height: 38px;
     margin-left: 310px;
@@ -92,15 +92,8 @@
     flex-direction: row;
 }
 
-.history-photo{
+.setting-photo-doctor{
     margin-left: 180px;
-    margin-top: 80px;
-    width: 119px;
-    height: 109px;
-}
-
-.setting-photo{
-    margin-left: 400px;
     margin-top: 80px;
     width: 119px;
     height: 109px;
@@ -111,7 +104,7 @@
     flex-direction: row;
 }
 
-.history-button{
+.settings-button{
     width: 174px;
     height: 38px;
     margin-left: 155px;
@@ -121,21 +114,6 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 26px;
-    color: #000000;
-    background-color: white;
-    border: none;
-}
-
-.settings-button{
-    width: 246px;
-    height: 19px;
-    margin-left: 310px;
-    margin-top: 10px;
-    font-family: 'Inika';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
     color: #000000;
     background-color: white;
     border: none;

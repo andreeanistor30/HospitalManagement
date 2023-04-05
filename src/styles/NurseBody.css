@@ -30,9 +30,9 @@
     height: 109px;
 }
 
-.setting-photo{
-    margin-left: 400px;
-    margin-top: 40px;
+.laboratory-photo-nurse{
+    margin-left: 180px;
+    margin-top: 80px;
     width: 119px;
     height: 109px;
 }
@@ -72,10 +72,59 @@
     border: none;
 }
 
-.setting-button{
+.laboratory-button-nurse{
+    width: 246px;
+    height: 19px;
+    margin-left: 120px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+    background-color: white;
+    border: none
+}
+
+.second-row-nurse{
+    display: flex;
+    flex-direction: row;
+}
+
+.vital-photo{
+    margin-left: 400px;
+    margin-top: 40px;
+    width: 119px;
+    height: 109px;
+}
+
+.vital-button{
     width: 174px;
     height: 38px;
     margin-left: 350px;
+    margin-top: 10px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: #000000;
+    background-color: white;
+    border: none;
+}
+
+.setting-photo-nurse{
+    margin-left: 400px;
+    margin-top: 80px;
+    width: 119px;
+    height: 109px;
+}
+
+.setting-button-nurse{
+    width: 174px;
+    height: 38px;
+    margin-left: 310px;
     margin-top: 10px;
     font-family: 'Inika';
     font-style: normal;

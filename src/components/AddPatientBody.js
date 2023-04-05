@@ -7,14 +7,14 @@ export default function AddPatientBody(){
             <div className="line"/>
 
             <div className="firstname-div">
-                <h3 className="firstname">Firstname</h3>
+                <h3 className="h3-firstname">Firstname</h3>
                 <input type="search" className="firstname-input" />
                 <h3 className="identity-no" >Identity No</h3>
                 <input type="search" className="identityno-input" />
             </div>
 
             <div className="lastname-div">
-                <h3 className="lastname">Lastname</h3>
+                <h3 className="h3-lastname">Lastname</h3>
                 <input type="search" className="lastname-input" />
                 <h3 className="occupation">Occupation</h3>
                 <input type="search" className="occupation-input" />

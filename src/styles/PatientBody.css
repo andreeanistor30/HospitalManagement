@@ -92,15 +92,8 @@
     flex-direction: row;
 }
 
-.history-photo-patient{
-    margin-left: 180px;
-    margin-top: 80px;
-    width: 119px;
-    height: 109px;
-}
-
 .setting-photo-patient{
-    margin-left: 400px;
+    margin-left: 180px;
     margin-top: 80px;
     width: 119px;
     height: 109px;
@@ -111,7 +104,7 @@
     flex-direction: row;
 }
 
-.history-button-patient{
+.settings-button-patient{
     width: 174px;
     height: 38px;
     margin-left: 155px;
@@ -121,21 +114,6 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 26px;
-    color: #000000;
-    background-color: white;
-    border: none;
-}
-
-.settings-button-patient{
-    width: 246px;
-    height: 19px;
-    margin-left: 310px;
-    margin-top: 10px;
-    font-family: 'Inika';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
     color: #000000;
     background-color: white;
     border: none;

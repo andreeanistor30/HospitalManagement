@@ -2,8 +2,7 @@ import React from "react";
 import "../styles/DoctorBody.css"
 import info from "../images/doctor-page/Info.png"
 import diagnostic from "../images/doctor-page/Diagnostic.png"
-import radiology from "../images/doctor-page/Radiology.png"
-import history from "../images/doctor-page/History.png"
+import laboratory from "../images/doctor-page/laboratory.png"
 import setting from "../images/doctor-page/Settings.png"
 export default function DoctorBody(){
     
@@ -14,22 +13,20 @@ export default function DoctorBody(){
             <div className="first-row">
                 <img src={info} className="info-photo" />
                 <img src={diagnostic} className="diagnostic-photo" />
-                <img src={radiology} className="radiology-photo" />
+                <img src={laboratory} className="laboratory-photo" />
             </div>
 
             <div className="first-row-buttons">
                 <button className="info-button">PATIENTS INFO</button>
                 <button className="diagnostic-button">DIAGNOSTICS PATIENTS</button>
-                <button className="radiology-button">RADIOLOGY</button>
+                <button className="laboratory-button">LABORATORY</button>
             </div>
 
             <div className="second-row">
-                <img src={history} className="history-photo" />
-                <img src={setting} className="setting-photo" />
+                <img src={setting} className="setting-photo-doctor" />
             </div>
 
             <div className="second-row-buttons">
-                <button className="history-button">HISTORY</button>
                 <button className="settings-button">SETTINGS</button>
             </div>
         </div>

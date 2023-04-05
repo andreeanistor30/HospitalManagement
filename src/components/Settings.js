@@ -5,7 +5,7 @@ export default function Settings(){
     const navigate = useNavigate();
 
     const onClick = () => {
-        navigate('/changePassword')
+        navigate('/changepassword')
     }
     return (
         <div>

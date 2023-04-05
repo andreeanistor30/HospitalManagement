@@ -24,12 +24,10 @@ export default function DoctorBody(){
             </div>
 
              <div className="second-row-patient">
-                <img src={history} className="history-photo-patient" />
                 <img src={setting} className="setting-photo-patient" />
             </div>
 
             <div className="second-row-buttons">
-                <button className="history-button">HISTORY</button>
                 <button className="settings-button">SETTINGS</button>
             </div> 
         </div>

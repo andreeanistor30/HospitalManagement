@@ -17,6 +17,18 @@ export default function Login(){
                     <img src={password} className="password-image" />
                     <input type="text" className="password-input" />
                 </div>
+                <div className="role">
+                    <label class="container-doctor">
+                    <input type="checkbox"/>
+                    <span class="checkmark">I'm a doctor</span>
+                    </label>
+
+                    <label class="container-nurse">
+                    <input type="checkbox"/>
+                    <span class="checkmark">I'm a nurse</span>
+                    </label>
+                    
+                </div>
                 <button className="login-button">Sign in</button>
             </div>
         </div>

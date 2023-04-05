@@ -1,8 +1,8 @@
-.personal-details{
+.vital-signs{
     width: 184px;
     height: 33px;
     margin-left: 47px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 0px;
     font-family: 'Inika';
     font-style: normal;
@@ -10,10 +10,9 @@
     font-size: 20px;
     line-height: 33px;
     color: black;
-
 }
 
-.line{
+.vitalsigns-line{
     width: 1500px;
     height: 0px;
     margin-left: 8px;
@@ -24,7 +23,34 @@
     transform: rotate(-0.12deg);
 }
 
-.h3-firstname{
+.identity-no-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.identityno-txt{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.identityno-input-signs{
+    width: 215px;
+    height: 24px;
+    margin-left: 60px;
+    margin-top: 40px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.h3-weight{
     width: 94px;
     height: 24px;
     margin-left: 80px;
@@ -37,21 +63,21 @@
     color: #000000;
 }
 
-.firstname-div{
+.weight-div{
     display: flex;
     flex-direction: row;
 }
 
-.firstname-input{
+.weight-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 30px;
     background: #EDF2FB;
     border:none;
 }
 
-.identity-no{
+.temperature{
     width: 94px;
     height: 24px;
     margin-left: 400px;
@@ -64,21 +90,21 @@
     color: #000000;
 }
 
-.identityno-input{
+.temperature-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 30px;
     background: #EDF2FB;
     border:none;
 }
 
-.lastname-div{
+.respiratory-div{
     display: flex;
     flex-direction: row;
 }
 
-.h3-lastname{
+.h3-respiratory{
     width: 94px;
     height: 24px;
     margin-left: 80px;
@@ -91,16 +117,16 @@
     color: #000000;
 }
 
-.lastname-input{
+.respiratory-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 5px;
     background: #EDF2FB;
     border:none;
 }
 
-.occupation{
+.bloodpresure{
     width: 94px;
     height: 24px;
     margin-left: 400px;
@@ -111,23 +137,24 @@
     font-size: 17px;
     line-height: 24px;
     color: #000000;
+    white-space: nowrap;
 }
 
-.occupation-input{
+.bloodpresure-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 5px;
     background: #EDF2FB;
     border:none;
 }
 
-.dateofbirth-div{
+.blood-div{
     display: flex;
     flex-direction: row;
 }
 
-.dateofbirth{
+.h3-blood{
     width: 94px;
     height: 24px;
     margin-left: 80px;
@@ -140,16 +167,16 @@
     color: #000000;
 }
 
-.dateofbirth-input{
+.bloodsugar-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 5px;
     background: #EDF2FB;
     border:none;
 }
 
-.gender{
+.h3-height{
     width: 94px;
     height: 24px;
     margin-left: 400px;
@@ -160,23 +187,24 @@
     font-size: 17px;
     line-height: 24px;
     color: #000000;
+    white-space: nowrap;
 }
 
-.gender-input{
+.height-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 5px;
     background: #EDF2FB;
     border:none;
 }
 
-.maritalstatus-div{
+.heartrate-div{
     display: flex;
     flex-direction: row;
 }
 
-.maritalstatus{
+.heartrate-h3{
     width: 94px;
     height: 24px;
     margin-left: 80px;
@@ -187,89 +215,35 @@
     font-size: 17px;
     line-height: 24px;
     color: #000000;
+    white-space: nowrap;
 }
 
-.maritalstatus-input{
+.heartrate-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 5px;
     background: #EDF2FB;
     border:none;
 }
 
-.nationality{
-    width: 94px;
-    height: 24px;
-    margin-left: 400px;
-    margin-top: 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: #000000;
+.allergies-line{
+    width: 1500px;
+    height: 0px;
+    margin-left: 8px;
+    margin-top: 0px;
+    border-color: rgba(128, 128, 128, 0.49);
+    border-width: thin;
+    border-style: solid;
+    transform: rotate(-0.12deg);
 }
 
-.nationality-input{
-    width: 215px;
-    height: 24px;
-    margin-left: 10px;
-    margin-top: 5px;
-    background: #EDF2FB;
-    border:none;
-}
-
-.religion-div{
+ .allergies-div{
     display: flex;
     flex-direction: row;
 }
 
-.religion{
-    width: 94px;
-    height: 24px;
-    margin-left: 80px;
-    margin-top: 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: #000000;
-}
-
-.religion-input{
-    width: 215px;
-    height: 24px;
-    margin-left: 10px;
-    margin-top: 5px;
-    background: #EDF2FB;
-    border:none;
-}
-
-.email{
-    width: 94px;
-    height: 24px;
-    margin-left: 400px;
-    margin-top: 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: #000000;
-}
-
-.email-input{
-    width: 215px;
-    height: 24px;
-    margin-left: 10px;
-    margin-top: 5px;
-    background: #EDF2FB;
-    border:none;
-}
-
-.home-address{
+.allergies{
     width: 184px;
     height: 33px;
     margin-left: 47px;
@@ -283,12 +257,7 @@
     color: black;
 }
 
-.city-div{
-    display: flex;
-    flex-direction: row;
-}
-
-.city{
+.h3-allergies{
     width: 94px;
     height: 24px;
     margin-left: 80px;
@@ -301,16 +270,16 @@
     color: #000000;
 }
 
-.city-input{
+.allergies-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 30px;
     background: #EDF2FB;
     border:none;
 }
 
-.district{
+.h3-allergen{
     width: 94px;
     height: 24px;
     margin-left: 400px;
@@ -323,98 +292,21 @@
     color: #000000;
 }
 
-.district-input{
+.allergen-input{
     width: 215px;
     height: 24px;
-    margin-left: 10px;
+    margin-left: 60px;
     margin-top: 30px;
     background: #EDF2FB;
     border:none;
 }
 
-.address-div{
-    display: flex;
-    flex-direction: row;
-}
-
-.address{
-    width: 94px;
-    height: 24px;
-    margin-left: 80px;
-    margin-top: 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: #000000;
-}
-
-.address-input{
-    width: 215px;
-    height: 24px;
-    margin-left: 10px;
-    margin-top: 5px;
-    background: #EDF2FB;
-    border:none;
-}
-
-.phone-number{
-    width: 94px;
-    height: 24px;
-    margin-left: 400px;
-    margin-top: 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: #000000;
-}
-
-.phone-input{
-    width: 215px;
-    height: 24px;
-    margin-left: 10px;
-    margin-top: 5px;
-    background: #EDF2FB;
-    border:none;
-}
-
-.postalcode-div{
-    display: flex;
-    flex-direction: row;
-}
-
-.postal-code{
-    width: 94px;
-    height: 24px;
-    margin-left: 80px;
-    margin-top: 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 24px;
-    color: #000000;
-}
-
-.postalcode-input{
-    width: 215px;
-    height: 24px;
-    margin-left: 10px;
-    margin-top: 5px;
-    background: #EDF2FB;
-    border:none;
-}
-
-.save-button{
+.save-button-vitalsign{
     width: 150px;
     height: 40px;
     margin-left: 1300px;
-    margin-top: 20px;
+    margin-top: 100px;
     background: #CCDBFD;
     border: none;
     border-radius: 7px;
 }
-

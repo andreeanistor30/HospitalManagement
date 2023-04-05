@@ -1,5 +1,5 @@
 .login{
-    background-image: url("C:\Users\nisto\Facultate\An3 sem 2\II\Proiect\medical-app\src\images\login-page\Background-image.png");
+    background-image: url("C:\Users\nisto\Facultate\An3 sem 2\II\Proiect\medical-app\src\images\login-page\background.jpg");
     width:1536px;
     height: 745px;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@
 h2{
     width: 265px;
     height: 23px;
-    margin-left: 90px;
+    margin-left: 70px;
     margin-top: 39px;
     font-family: 'Nobile';
     font-style: normal;
@@ -34,7 +34,7 @@ h2{
     width: 126px;
     height: 29px;
     margin-left: 30px;
-    margin-top: 50px;
+    margin-top: 40px;
     font-family: 'Nobile';
     font-style: normal;
     font-weight: 400;
@@ -91,7 +91,7 @@ h2{
     width: 126px;
     height: 29px;
     margin-left: 30px;
-    margin-top: 50px;
+    margin-top: 40px;
     font-family: 'Nobile';
     font-style: normal;
     font-weight: 400;
@@ -104,8 +104,27 @@ h2{
     width: 160px;
     height: 30px;
     margin-left: 120px;
-    margin-top: 80px;
+    margin-top: 40px;
     background: rgba(0, 153, 204, 0.84);
     border:0;
-    border-radius: 10px;
+    border-radius: 4px;
+}
+
+.role{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-doctor{
+    margin-top: 30px;
+    margin-left:40px;
+}
+
+.container-nurse{
+    margin-left: 40px;
+}
+
+.checkmark{
+    font-family: 'Nobile';
+    font-style: normal;
 }
