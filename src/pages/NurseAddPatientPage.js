@@ -7,7 +7,7 @@ export default function NurseAddPatientPage(){
         <div>
             <Header 
             img={image}
-            txt={'Name'}
+            txt={(JSON.parse(localStorage.getItem("user"))).firstName}
             />
             <AddPatientBody />
         </div>

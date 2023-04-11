@@ -2,7 +2,7 @@
     width: 184px;
     height: 33px;
     margin-left: 47px;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 0px;
     font-family: 'Inika';
     font-style: normal;
@@ -416,5 +416,32 @@
     background: #CCDBFD;
     border: none;
     border-radius: 7px;
+}
+
+.doctor-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.h3-doctor{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.doctor-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 30px;
+    background: #EDF2FB;
+    border:none;
 }
 

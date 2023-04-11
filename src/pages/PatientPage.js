@@ -8,7 +8,7 @@ export default function PatientPage(){
         <div>
             <Header
             img={photo}
-            txt={'Name'}
+            txt={(JSON.parse(localStorage.getItem("user"))).firstName}
             />
             <PatientBody />
         </div>

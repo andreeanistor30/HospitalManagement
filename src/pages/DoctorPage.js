@@ -6,7 +6,7 @@ export default function DoctorPage(){
         <div>
             <Header 
             img={image}
-            txt={'Name'}/> 
+            txt={(JSON.parse(localStorage.getItem("user"))).firstName}/> 
             <DoctorBody />
         </div>
     )

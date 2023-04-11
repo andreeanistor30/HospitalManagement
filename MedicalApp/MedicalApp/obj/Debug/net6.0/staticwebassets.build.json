@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "64ZFsXF0oAbHMmy5o9YQ0jrYuxOBKFAzgKEzb5h3iXM=",
+  "Source": "MedicalApp",
+  "BasePath": "_content/MedicalApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

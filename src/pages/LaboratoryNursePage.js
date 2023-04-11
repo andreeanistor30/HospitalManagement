@@ -8,7 +8,7 @@ export default function LaboratoryNursePage(){
         <div>
             <Header
             img={nurseimg}
-            txt={'Name'}
+            txt={(JSON.parse(localStorage.getItem("user"))).firstName}
             />
             <Laboratory />
             <LaboratoryTable />

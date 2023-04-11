@@ -7,7 +7,7 @@ export default function SettingsPage(){
         <div>
             <Header 
             img={image}
-            txt={'Name'}
+            txt={(JSON.parse(localStorage.getItem("user"))).firstName}
             />
             <Settings />
         </div>
