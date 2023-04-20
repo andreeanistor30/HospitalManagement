@@ -1,6 +1,7 @@
 ﻿using MedicalApp.DataTransferObject;
 using MedicalApp.Models.Domain;
 using System.Text;
+using XSystem.Security.Cryptography;
 
 namespace MedicalApp.Service.LoginService
 {
@@ -15,58 +16,73 @@ namespace MedicalApp.Service.LoginService
 
         public Doctor LoginDoctor(LoginDTO loginDTO)
         {
-            var tmpSource = ASCIIEncoding.ASCII.GetBytes(loginDTO.Password);
-            byte[] tmpNewHash;
-            tmpNewHash = new XSystem.Security.Cryptography.MD5CryptoServiceProvider().ComputeHash(tmpSource);
-            var hash = context.Doctors.Where(u => u.UserName == loginDTO.Username).FirstOrDefault();
+            var passwordBytes = Encoding.ASCII.GetBytes(loginDTO.Password);
+            byte[] hashBytes;
 
-            if (hash != null)
+            using (var md5 = new MD5CryptoServiceProvider())
             {
-
-                if (hash.Password.Equals(Convert.ToHexString(tmpNewHash)) == true)
-                    return hash;
-                else
-                    return null;
+                hashBytes = md5.ComputeHash(passwordBytes);
             }
 
-            else return null;
+            var passwordHash = Convert.ToBase64String(hashBytes);
+
+            var doctor = context.Doctors.FirstOrDefault(u => u.UserName == loginDTO.Username && u.Password == passwordHash);
+
+            if (doctor != null)
+            {
+                return doctor; // Login successful
+            }
+            else
+            {
+                return null; // Login failed
+            }
         }
         public Patient LoginPatient(LoginDTO loginDTO)
         {
-            var tmpSource = ASCIIEncoding.ASCII.GetBytes(loginDTO.Password);
-            byte[] tmpNewHash;
-            tmpNewHash = new XSystem.Security.Cryptography.MD5CryptoServiceProvider().ComputeHash(tmpSource);
-            var hash = context.Patients.Where(u => u.Username == loginDTO.Username).FirstOrDefault();
+            var passwordBytes = Encoding.ASCII.GetBytes(loginDTO.Password);
+            byte[] hashBytes;
 
-            if (hash != null)
+            using (var md5 = new MD5CryptoServiceProvider())
             {
-
-                if (hash.Password.Equals(Convert.ToHexString(tmpNewHash)) == true)
-                    return hash;
-                else
-                    return null;
+                hashBytes = md5.ComputeHash(passwordBytes);
             }
 
-            else return null;
+            var passwordHash = Convert.ToBase64String(hashBytes);
+
+            var patient = context.Patients.FirstOrDefault(u => u.Username == loginDTO.Username && u.Password == passwordHash);
+
+            if (patient != null)
+            {
+                return patient; // Login successful
+            }
+            else
+            {
+                return null; // Login failed
+            }
         }
 
         public Nurse LoginNurse(LoginDTO loginDTO)
         {
-            var tmpSource = ASCIIEncoding.ASCII.GetBytes(loginDTO.Password);
-            byte[] tmpNewHash;
-            tmpNewHash = new XSystem.Security.Cryptography.MD5CryptoServiceProvider().ComputeHash(tmpSource);
-            var hash = context.Nurses.Where(u => u.UserName == loginDTO.Username).FirstOrDefault();
+            var passwordBytes = Encoding.ASCII.GetBytes(loginDTO.Password);
+            byte[] hashBytes;
 
-            if (hash != null)
+            using (var md5 = new MD5CryptoServiceProvider())
             {
-
-                if (hash.Password.Equals(Convert.ToHexString(tmpNewHash)) == true)
-                    return hash;
-                else
-                    return null;
+                hashBytes = md5.ComputeHash(passwordBytes);
             }
 
-            else return null;
+            var passwordHash = Convert.ToBase64String(hashBytes);
+
+            var nurse = context.Nurses.FirstOrDefault(u => u.UserName == loginDTO.Username && u.Password == passwordHash);
+
+            if (nurse != null)
+            {
+                return nurse; // Login successful
+            }
+            else
+            {
+                return null; // Login failed
+            }
         }
 
     }

@@ -33,6 +33,5 @@ namespace MedicalApp.Models.Domain
 
         public string Allergen { get; set; }
 
-        public string Reaction { get; set; }
     }
 }

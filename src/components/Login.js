@@ -67,7 +67,8 @@ export default function Login(){
                 if(!response.isError){
                     navigate("/doctorpage");
                     localStorage.setItem("user",JSON.stringify({
-                        firstName:response.firstName
+                        firstName:response.firstName,
+                        lastName:response.lastName
                     }))
                 }
             }
@@ -79,7 +80,8 @@ export default function Login(){
                 if(!response.isError){
                     navigate("/nursemainpage");
                     localStorage.setItem("user",JSON.stringify({
-                        firstName:response.firstName
+                        firstName:response.firstName,
+                        lastName: response.lastName
                     }))
                 }
             }               
@@ -92,7 +94,8 @@ export default function Login(){
                 if(!response.isError){
                      navigate("/patientpage");
                      localStorage.setItem("user",JSON.stringify({
-                        firstName:response.firstName
+                        firstName:response.firstName,
+                        lastName:response.lastName
                     }))
                 }
             }

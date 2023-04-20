@@ -1,8 +1,11 @@
 using MedicalApp;
+using MedicalApp.Service.AnalysisResultsService;
 using MedicalApp.Service.HomeAddressService;
+using MedicalApp.Service.LaboratoryAnalysisService;
 using MedicalApp.Service.LoginService;
 using MedicalApp.Service.NurseService;
 using MedicalApp.Service.PatientService;
+using MedicalApp.Service.VitalSignsService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +22,10 @@ builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IPersonalDetailsService,PersonalDetailsService>();
 builder.Services.AddScoped<IPatientService,PatientService>();
 builder.Services.AddScoped<IHomeAddressService,HomeAddressService>();
+builder.Services.AddScoped<IVitalSignsService, VitalSignsService>();
+builder.Services.AddScoped<ILaboratoryAnalysisService,LaboratoryAnalysisService>();
+builder.Services.AddScoped<IAnalysisResultsService, AnalysisResultsService>();
+builder.Services.AddScoped<INurseService, NurseService>();
 builder.Services.AddMvcCore();
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

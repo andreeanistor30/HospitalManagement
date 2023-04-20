@@ -22,12 +22,16 @@ namespace MedicalApp.Models.Domain
 
         public string Password { get; set; }
 
+        public string Diagnostic { get; set; }
+
+        public string Treatment { get; set; }
+
         public PersonalDetails PersonalDetails { get; set; }
 
         public HomeAddress HomeAddress { get; set; }
 
         public VitalSigns VitalSigns { get; set; }
 
-        public IEnumerable<Results> Results { get; set; }   
+        public IEnumerable<AnalysisResults> Results { get; set; }   
     }
 }

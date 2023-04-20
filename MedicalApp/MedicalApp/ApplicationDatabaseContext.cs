@@ -29,6 +29,10 @@ namespace MedicalApp
 
         public DbSet<HomeAddress> HomeAddresses { get; set; }
 
+        public DbSet<VitalSigns> VitalSigns { get; set; }
+
+        public DbSet<AnalysisResults> Results { get; set; } 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=ANDREEA\\SQLEXPRESS;Database=HospitalDB;Trusted_Connection=True;TrustServerCertificate=True");

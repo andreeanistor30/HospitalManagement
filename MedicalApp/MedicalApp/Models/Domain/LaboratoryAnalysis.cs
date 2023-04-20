@@ -15,6 +15,6 @@ namespace MedicalApp.Models.Domain
 
         public string ReferenceRange { get; set; }
 
-        public IEnumerable<Results> Laboratories { get; set; }
+        public IEnumerable<AnalysisResults> Laboratories { get; set; }
     }
 }

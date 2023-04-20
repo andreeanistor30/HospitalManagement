@@ -1,29 +1,75 @@
+import React, {useState} from "react";
 import nurseimg from "../images/nurse-page/nurse.png"
 import Header from '../components/Header'
 import Laboratory from "../components/Laboratory"
 import LaboratoryTable from "../components/LaboratoryTable"
 import LaboratoryTableRow from "../components/LaboratoryTableRow"
+import GetLaboratoryAnalysis from "../api/GetLaboratoryAnalysis"
+import { useEffect} from "react";
+import "../styles/LaboratoryNursePage.css"
+import AddAnalysisResultsApi from "../api/AddAnalysisResultsApi";
 export default function LaboratoryNursePage(){
+    const [data, setData] = useState(undefined);
+    const laboratoryAnalysis = async () => {
+        const response = await GetLaboratoryAnalysis();
+        setData(response.map(r => ({
+            ...r,
+            value: 0
+        })))
+    }
+
+    useEffect(() => {
+        laboratoryAnalysis()
+    }, []);
+
+    let count = 1;
+
+    const handleFieldChange = (index, event) => {
+        const newData= [...data];
+        newData[index][event.target.name] = event.target.value;
+        setData(newData);
+    };
+
+    const save =async () => {
+        const body = data.map(d => ({
+            testName: d.testName,
+            result: d.value
+        }))
+        const response = await AddAnalysisResultsApi(identityData.identityno,  body);
+    }
+
+    const [identityData,setIdentityData] = useState({
+        identityno:""
+    });
+
+    const handleFormData = (event) => {
+        const { name, value } = event.target
+        setIdentityData(prevFormData => {
+            return {
+                ...prevFormData,
+                [name]: value
+            }
+        })
+    }
     return(
         <div>
             <Header
             img={nurseimg}
             txt={(JSON.parse(localStorage.getItem("user"))).firstName}
             />
-            <Laboratory />
+            <Laboratory 
+            laboratorydata={identityData.identityno}
+            onChangeLaboratory={handleFormData}
+            />
             <LaboratoryTable />
-
+            {data !== undefined && data.map(((item, index) =>(
             <LaboratoryTableRow
-            txt={'Glucose'}
-            units={'mg/dL'}
-            referenceRange={'65-125'} />
-
-            <LaboratoryTableRow
-            txt={'Sodium'}
-            units={'mmol/L'}
-            referenceRange={'136-144'} />
-            
-
+                item={item}
+                handleFieldChange={handleFieldChange}
+                index={index}
+            />
+        )))}
+             <button className="btn" onClick={save}>Save</button> 
         </div>
     )
 }

@@ -29,7 +29,7 @@
     width: 184px;
     height: 33px;
     margin-left: 60px;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 0px;
     font-family: 'Inika';
     font-style: normal;
@@ -49,5 +49,6 @@
     border-style: solid;
     transform: rotate(-0.12deg);
 }
+
 
 

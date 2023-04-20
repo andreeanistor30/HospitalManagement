@@ -412,7 +412,7 @@
     width: 150px;
     height: 40px;
     margin-left: 1300px;
-    margin-top: 20px;
+    margin-top: 0px;
     background: #CCDBFD;
     border: none;
     border-radius: 7px;
@@ -443,5 +443,29 @@
     margin-top: 30px;
     background: #EDF2FB;
     border:none;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message{
+    font-style: normal;
+    color:red;
+    margin-left:1330px;
+    margin-top:0px;
+    font-size:15px;
+    white-space:nowrap;
+}
+
+.no-error-message{
+    font-style: normal;
+    margin-left:1330px;
+    margin-top:0px;
+    font-size:15px;
+    white-space:nowrap;
+    width: 45px;
+    height: 32px;
 }
 

@@ -15,15 +15,64 @@ namespace MedicalApp.Controllers
             this.service = service;
         }
 
+        [HttpGet]
+        [Route("getall")]
+        public ActionResult<PatientDTO> GetPatients()
+        {
+            var patients = service.GetAllPatients();
+
+            if (patients != null)
+                return Ok(patients);
+            else
+                return NotFound();
+        }
+
+        [HttpGet]
+        [Route("getbypatientname")]
+
+        public ActionResult<PatientDTOWrite> GetByName(string firstName, string lastName)
+        {
+            var patients = service.GetPatientByName(firstName, lastName);
+
+            if (patients != null)
+                return Ok(patients);
+            else
+                return NotFound();
+        }
+
+        [HttpGet]
+        [Route("getbydoctorname")]
+
+        public ActionResult<PatientDTOWrite> GetByDoctorName(string firstName, string lastName)
+        {
+            var patients = service.GetDoctorByName(firstName,lastName);
+
+            if (patients != null)
+                return Ok(patients);
+            else
+                return NotFound();
+        }
+
         [HttpPost]
-        public ActionResult<PatientDTO> AddPatient(PatientDTO patientDTO)
+        [Route("addpatient")]
+        public ActionResult<PatientDTOWrite> AddPatient(PatientDTO patientDTO)
         {
             var patient = service.AddPatient(patientDTO);
 
             if (patient != null)
-            {
                 return Ok(patient);
-            }
+            else
+                return NotFound();
+        }
+
+        [HttpDelete]
+        [Route("deletepatient")]
+        public ActionResult DeletePatient(Guid id)
+        {
+            var patient = service.DeletePatient(id);
+
+            if(patient != null)
+                return Ok(patient);
             else
                 return NotFound();
         }

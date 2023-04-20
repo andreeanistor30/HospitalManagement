@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MedicalApp.Models.Domain
 {
-    public class Results
+    public class AnalysisResults
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -15,6 +15,10 @@ namespace MedicalApp.Models.Domain
         [ForeignKey("LaboratoryAnalysis")]
 
         public Guid AnalysisId { get; set; }
+
+        public double Result { get; set; }
+
+        public LaboratoryAnalysis LaboratoryAnalysis { get; set; }
 
 
     }

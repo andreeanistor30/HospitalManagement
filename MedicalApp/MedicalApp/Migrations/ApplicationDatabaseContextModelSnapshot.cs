@@ -22,6 +22,30 @@ namespace MedicalApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("MedicalApp.Models.Domain.AnalysisResults", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AnalysisId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PatientId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Result")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnalysisId");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("Results");
+                });
+
             modelBuilder.Entity("MedicalApp.Models.Domain.Doctor", b =>
                 {
                     b.Property<Guid>("Id")
@@ -164,6 +188,10 @@ namespace MedicalApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Diagnostic")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid>("DoctorId")
                         .HasColumnType("uniqueidentifier");
 
@@ -176,6 +204,10 @@ namespace MedicalApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Treatment")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -238,30 +270,6 @@ namespace MedicalApp.Migrations
                     b.ToTable("PersonalDetails");
                 });
 
-            modelBuilder.Entity("MedicalApp.Models.Domain.Results", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("AnalysisId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("LaboratoryAnalysisId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("PatientId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LaboratoryAnalysisId");
-
-                    b.HasIndex("PatientId");
-
-                    b.ToTable("Results");
-                });
-
             modelBuilder.Entity("MedicalApp.Models.Domain.VitalSigns", b =>
                 {
                     b.Property<Guid>("Id")
@@ -291,10 +299,6 @@ namespace MedicalApp.Migrations
                     b.Property<Guid>("PatientId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Reaction")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("RespiratoryRate")
                         .HasColumnType("int");
 
@@ -310,6 +314,23 @@ namespace MedicalApp.Migrations
                         .IsUnique();
 
                     b.ToTable("VitalSigns");
+                });
+
+            modelBuilder.Entity("MedicalApp.Models.Domain.AnalysisResults", b =>
+                {
+                    b.HasOne("MedicalApp.Models.Domain.LaboratoryAnalysis", "LaboratoryAnalysis")
+                        .WithMany("Laboratories")
+                        .HasForeignKey("AnalysisId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MedicalApp.Models.Domain.Patient", null)
+                        .WithMany("Results")
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LaboratoryAnalysis");
                 });
 
             modelBuilder.Entity("MedicalApp.Models.Domain.HomeAddress", b =>
@@ -343,19 +364,6 @@ namespace MedicalApp.Migrations
                         .IsRequired();
 
                     b.Navigation("Patient");
-                });
-
-            modelBuilder.Entity("MedicalApp.Models.Domain.Results", b =>
-                {
-                    b.HasOne("MedicalApp.Models.Domain.LaboratoryAnalysis", null)
-                        .WithMany("Laboratories")
-                        .HasForeignKey("LaboratoryAnalysisId");
-
-                    b.HasOne("MedicalApp.Models.Domain.Patient", null)
-                        .WithMany("Results")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("MedicalApp.Models.Domain.VitalSigns", b =>

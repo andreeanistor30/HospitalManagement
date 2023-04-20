@@ -1,25 +1,60 @@
-import React from "react";
+import React, {useState} from "react";
 import image from "../images/nurse-page/nurse.png"
 import Header from "../components/Header"
-import DropDownSearch from "../components/DropDownSearch";
 import TableHeader from "../components/TableHeader";
 import TableRow from "../components/TableRow";
-export default function NurseDischargePatientPage(){
-    return(
+import DischargePatientApi from "../api/DischargePatientApi";
+import { useEffect} from "react";
+export default function NurseDischargePatientPage() {
+    let count = 1;
+    const [response, setResponse] = useState(undefined);
+    const dischargePatient = async () => {
+        setResponse(await DischargePatientApi());
+    }
+
+    const [formData, setFormData] = useState({
+        filter: "",
+        name: ""
+    })
+
+    useEffect(() => {
+        dischargePatient()
+    }, []);
+
+    const handleFormData = (event) => {
+        const { name, value } = event.target
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [name]: value
+            }
+        })
+    }
+    return (
         <div>
-            <Header 
-            img={image}
-            txt={(JSON.parse(localStorage.getItem("user"))).firstName}
+            <Header
+                img={image}
+                txt={(JSON.parse(localStorage.getItem("user"))).firstName}
             />
-            <DropDownSearch />
-            <TableHeader />
+            <TableHeader 
+            onChange={handleFormData}
+            value={formData.filter}
+            name='filter'
+            inputValue={formData.name}
+            inputName='name'
+            setResponse={setResponse}
+            />
+            {response !== undefined && response.map((item =>(
             <TableRow
-            firstcolumn='1'
-            firstname='Andreea'
-            lastname='Nistor'
-            diagnostic='Headache'
-            doctor='John Smith'
+                firstcolumn={count++}
+                firstname={item.firstName}
+                lastname={item.lastName}
+                diagnostic={item.diagnostic}
+                doctor = {item.doctorName}
+                id={item.id}
+                getPatient={dischargePatient} 
             />
+        )))}
         </div>
     )
 }
