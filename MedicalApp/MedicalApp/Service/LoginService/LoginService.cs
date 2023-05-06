@@ -1,5 +1,6 @@
 ﻿using MedicalApp.DataTransferObject;
 using MedicalApp.Models.Domain;
+using Microsoft.EntityFrameworkCore;
 using System.Text;
 using XSystem.Security.Cryptography;
 
@@ -49,8 +50,7 @@ namespace MedicalApp.Service.LoginService
 
             var passwordHash = Convert.ToBase64String(hashBytes);
 
-            var patient = context.Patients.FirstOrDefault(u => u.Username == loginDTO.Username && u.Password == passwordHash);
-
+            var patient = context.Patients.Include(p=>p.PersonalDetails).FirstOrDefault(u => u.Username == loginDTO.Username && u.Password == passwordHash);
             if (patient != null)
             {
                 return patient; // Login successful

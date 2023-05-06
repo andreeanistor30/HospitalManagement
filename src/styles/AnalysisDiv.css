@@ -1,0 +1,48 @@
+ .analysis-result-div{
+    width: 135px;
+    height: 47px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+} 
+
+.analysis-result-img{
+    width: 30px;
+    height: 30px;
+    margin-top:10px;
+    margin-left:5px;
+    margin-right: 0px;
+}
+
+.txt-analysis-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.analysis-type{
+    width: 46px;
+    height: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    margin-top:5px;
+    margin-left:20px;
+    white-space:nowrap;
+}
+
+.analysis-result{
+    width: 46px;
+    height: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    margin-top:0px;
+    margin-left: 20px;
+    white-space: nowrap;
+}

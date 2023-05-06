@@ -13,7 +13,7 @@ namespace MedicalApp.Models.Domain
 
         public Guid PatientId { get; set; }
 
-        public Patient Patient { get; set; }
+        public virtual Patient Patient { get; set; }
 
         public double Weight { get; set; }
 

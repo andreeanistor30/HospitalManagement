@@ -1,5 +1,6 @@
 using MedicalApp;
 using MedicalApp.Service.AnalysisResultsService;
+using MedicalApp.Service.DoctorService;
 using MedicalApp.Service.HomeAddressService;
 using MedicalApp.Service.LaboratoryAnalysisService;
 using MedicalApp.Service.LoginService;
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IVitalSignsService, VitalSignsService>();
 builder.Services.AddScoped<ILaboratoryAnalysisService,LaboratoryAnalysisService>();
 builder.Services.AddScoped<IAnalysisResultsService, AnalysisResultsService>();
 builder.Services.AddScoped<INurseService, NurseService>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddMvcCore();
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

@@ -17,8 +17,7 @@ namespace MedicalApp.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Route("/addPersonalDetails")]
         public ActionResult<PersonalDetails> InsertPersonalDetails(PersonalDetailsDTO personalDetails)
         {
             var details = service.AddPersonalDetails(personalDetails);

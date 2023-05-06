@@ -14,5 +14,12 @@ namespace MedicalApp.Service.PatientService
         public IEnumerable<PatientDTOWrite> GetPatientByName(string firstName, string lastName);
 
         public IEnumerable<PatientDTOWrite> GetDoctorByName(string firstName, string lastName);
+
+        public Patient GetByIdentityNo(string identityNo);
+
+        public IEnumerable<AnalysisDTO> GetResultsOfAPatient(string identityNo);
+
+        public PatientDiagnosticDTO GetPatientDiagnostics(string firstName, string lastName);
+
     }
 }

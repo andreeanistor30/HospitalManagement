@@ -6,7 +6,7 @@ import DoctorLoginApi from "../api/DoctorLoginApi"
 import NurseLoginApi from "../api/NurseLoginApi"
 import { useNavigate } from "react-router-dom"
 import PatientLoginApi from "../api/PatientLoginApi"
-export default function Login(){
+export default function Login() {
     const [formData, setFormData] = useState({
         username: "",
         password: ""
@@ -40,14 +40,14 @@ export default function Login(){
         setEmptyUsernameError(false);
         setEmptyPasswordError(false);
         setErrorMessage("");
-        if(!formData.username && !formData.password){
+        if (!formData.username && !formData.password) {
             console.log("2");
             setEmptyPasswordError(true);
             setEmptyUsernameError(true);
             setErrorMessage("Username and password are mandatory!");
             return false;
         }
-        else if(!formData.username){
+        else if (!formData.username) {
             setEmptyPasswordError(true);
             setErrorMessage("Username is mandatory");
             return false;
@@ -57,89 +57,95 @@ export default function Login(){
 
     const loginFunction = async () => {
         let response;
-        
-        if(validateFormData()){
-            if(isCheckedDoctor){
+
+        if (validateFormData()) {
+            if (isCheckedDoctor) {
                 response = await DoctorLoginApi(
-                formData.username,
-                formData.password
-            )
-                if(!response.isError){
+                    formData.username,
+                    formData.password
+                )
+                if (!response.isError) {
                     navigate("/doctorpage");
-                    localStorage.setItem("user",JSON.stringify({
-                        firstName:response.firstName,
-                        lastName:response.lastName
+                    localStorage.setItem("user", JSON.stringify({
+                        firstName: response.firstName,
+                        lastName: response.lastName,
+                        gender: response.gender
                     }))
                 }
             }
-            else if(isCheckedNurse){
+            else if (isCheckedNurse) {
                 response = await NurseLoginApi(
-                formData.username,
-                formData.password
-                ) 
-                if(!response.isError){
+                    formData.username,
+                    formData.password,
+                )
+                if (!response.isError) {
                     navigate("/nursemainpage");
-                    localStorage.setItem("user",JSON.stringify({
-                        firstName:response.firstName,
-                        lastName: response.lastName
+                    localStorage.setItem("user", JSON.stringify({
+                        firstName: response.firstName,
+                        lastName: response.lastName,
+                        gender: response.gender
                     }))
                 }
-            }               
-            else
-            {
+            }
+            else {
                 response = await PatientLoginApi(
-                formData.username,
-                formData.password
+                    formData.username,
+                    formData.password
                 )
-                if(!response.isError){
-                     navigate("/patientpage");
-                     localStorage.setItem("user",JSON.stringify({
-                        firstName:response.firstName,
-                        lastName:response.lastName
+                if (!response.isError) {
+                    navigate("/patientpage");
+                    localStorage.setItem("user", JSON.stringify({
+                        firstName: response.firstName,
+                        lastName: response.lastName,
+                        gender: response.personalDetails.gender,
+                        age : response.personalDetails.age
                     }))
                 }
             }
 
-            if (response.isError){
+            if (response.isError) {
                 console.log('No');
                 setEmptyPasswordError(true);
                 setEmptyUsernameError(true);
                 setErrorMessage("Invalid credentials!");
-           }
-              
-          console.log(response);
+            }
+
+            console.log(response);
             return true;
         }
-        
+
     }
-    
+
     return (
         <div className="login">
             <div className="login-container">
                 <h2>Sign in to start your session</h2>
                 <h3 className="username-text">Username</h3>
                 <div className="username">
-                    <img src={username} className="username-image"/>
+                    <img src={username} className="username-image" />
                     <input type="text" name="username" className="username-input" onChange={handleFormData} emptyFieldError={emptyUsernameError} value={formData.username} />
                 </div>
                 <h3 className="password-text">Password</h3>
                 <div className="password">
                     <img src={password} className="password-image" />
-                    <input type="password" name="password" className="password-input" onChange={handleFormData} emptyFieldError={emptyPasswordError}  value={formData.password}/>
+                    <input type="password" name="password" className="password-input" onChange={handleFormData} emptyFieldError={emptyPasswordError} value={formData.password} />
                 </div>
                 <div className="role">
                     <label class="container-doctor">
-                    <input type="checkbox" checked={isCheckedDoctor} onChange={handleCheckboxChangeDoctor}/>
-                    <span class="checkmark" >I'm a doctor</span>
+                        <input type="checkbox" checked={isCheckedDoctor} onChange={handleCheckboxChangeDoctor} />
+                        <span class="checkmark" >I'm a doctor</span>
                     </label>
 
                     <label class="container-nurse">
-                    <input type="checkbox" checked={isCheckedNurse} onChange={handleCheckboxChangeNurse}/>
-                    <span class="checkmark" >I'm a nurse</span>
+                        <input type="checkbox" checked={isCheckedNurse} onChange={handleCheckboxChangeNurse} />
+                        <span class="checkmark" >I'm a nurse</span>
                     </label>
-                    
+
                 </div>
+                <div className="footer">
+                {errorMessage ? <p className='err-message'>{errorMessage}</p> : <div className='no-er-message'> </div>}
                 <button className="login-button" onClick={loginFunction}>Sign in</button>
+                </div>
             </div>
         </div>
     )

@@ -5,8 +5,17 @@ import diagnostic from "../images/patient-page/Diagnostics.png"
 import analysis from "../images/patient-page/Analysis.png"
 import history from "../images/patient-page/History.png"
 import setting from "../images/patient-page/Settings.png"
+import { useNavigate } from "react-router-dom"
 export default function DoctorBody(){
-    
+    const navigate = useNavigate();
+
+    const myDiagnosticClick= () => {
+        navigate('/mydiagnostic')
+    }
+
+    const myAnalysisClick= () =>{
+        navigate('/myanalysis')
+    }
     return(
         <div>
             <h2 className="dashboard-patient">Dashboard</h2>
@@ -18,9 +27,9 @@ export default function DoctorBody(){
             </div>
 
             <div className="first-row-buttons-patient">
-                <button className="treatment-button">TREATMENT REGIMEN</button>
-                <button className="diagnostic-button-patient">MY DIAGNOSTIC</button>
-                <button className="analysis-button">MEDICAL ANALYSIS</button>
+                <button className="treatment-button" >TREATMENT REGIMEN</button>
+                <button className="diagnostic-button-patient" onClick={myDiagnosticClick}>MY DIAGNOSTIC</button>
+                <button className="analysis-button" onClick={myAnalysisClick}>MEDICAL ANALYSIS</button>
             </div>
 
              <div className="second-row-patient">

@@ -4,8 +4,26 @@ import info from "../images/doctor-page/Info.png"
 import diagnostic from "../images/doctor-page/Diagnostic.png"
 import laboratory from "../images/doctor-page/laboratory.png"
 import setting from "../images/doctor-page/Settings.png"
+import { useNavigate } from "react-router-dom"
 export default function DoctorBody(){
+    const navigate = useNavigate();
     
+    const onClick = () =>{
+        navigate("/diagnosticpatient");
+    }
+
+    const onClickLaboratory = () =>{
+        navigate('/doctorlaboratory');
+    }
+
+    const onClickSettings = () =>{
+        navigate('/settings')
+    }
+
+    const onClickPatientsInfo = () =>{
+        navigate('/patientinfo')
+    }
+
     return(
         <div>
             <h2 className="dashboard">Dashboard</h2>
@@ -17,9 +35,9 @@ export default function DoctorBody(){
             </div>
 
             <div className="first-row-buttons">
-                <button className="info-button">PATIENTS INFO</button>
-                <button className="diagnostic-button">DIAGNOSTICS PATIENTS</button>
-                <button className="laboratory-button">LABORATORY</button>
+                <button className="info-button" onClick={onClickPatientsInfo}>PATIENTS INFO</button>
+                <button className="diagnostic-button" onClick={onClick}>DIAGNOSTICS PATIENTS</button>
+                <button className="laboratory-button" onClick={onClickLaboratory}>LABORATORY</button>
             </div>
 
             <div className="second-row">
@@ -27,7 +45,7 @@ export default function DoctorBody(){
             </div>
 
             <div className="second-row-buttons">
-                <button className="settings-button">SETTINGS</button>
+                <button className="settings-button" onClick={onClickSettings}>SETTINGS</button>
             </div>
         </div>
     );

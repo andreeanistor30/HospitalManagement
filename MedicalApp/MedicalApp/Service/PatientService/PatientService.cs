@@ -1,5 +1,8 @@
 ﻿using MedicalApp.DataTransferObject;
 using MedicalApp.Models.Domain;
+using Microsoft.EntityFrameworkCore;
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 using XAct;
 
@@ -115,5 +118,69 @@ namespace MedicalApp.Service.PatientService
             return list;
 
         }
+
+        public Patient GetByIdentityNo(string identityNo)
+        {
+            var personalDetails = context.PersonalDetails
+                                           .Where(p => p.IdentityNo.Equals(identityNo))
+                                           .FirstOrDefault();
+            if (personalDetails != null)
+            {
+                var patient = context.Patients
+                                      .Include(p => p.VitalSigns)
+                                      .Where(p => p.Id == personalDetails.PatientId)
+                                      .FirstOrDefault();
+                return patient;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+            public IEnumerable<AnalysisDTO> GetResultsOfAPatient(string identityNo)
+        {
+            var patientId = context.PersonalDetails.Where(p => p.IdentityNo == identityNo).Select(p=>p.PatientId).FirstOrDefault();
+            var result = context.Results.Where(r=>r.PatientId == patientId).ToList();
+            var values= new List<AnalysisDTO>();
+            for(int i = 0; i < result.Count(); i++)
+            {
+                var analysis = context.LaboratoryAnalyses.Where(l => l.Id == result[i].AnalysisId).FirstOrDefault();
+                AnalysisDTO analysisDTO = new AnalysisDTO
+                {
+                    Result = result[i].Result,
+                    TestName = analysis.TestName,
+                    Range = analysis.ReferenceRange
+
+                };
+                values.Add(analysisDTO);
+            }
+            return values;
+        }
+
+        public PatientDiagnosticDTO GetPatientDiagnostics(string firstName, string lastName)
+        {
+            var patientId = context.Patients.Where(p=>p.FirstName== firstName && p.LastName == lastName).FirstOrDefault();
+            var vitalSigns = context.VitalSigns.Where(v => v.PatientId == patientId.Id).FirstOrDefault();
+            
+
+            PatientDiagnosticDTO patient = new PatientDiagnosticDTO()
+            {
+                Weight = vitalSigns.Weight,
+                RespiratoryRate = vitalSigns.RespiratoryRate,
+                BloodPressure= vitalSigns.BloodPressure,
+                BloodSugar = vitalSigns.BloodSugar,
+                HeartRate = vitalSigns.HeartRate,
+                Temperature = vitalSigns.Temperature,
+                Height = vitalSigns.Height,
+                Allergen = vitalSigns.Allergen,
+                AllergyType = vitalSigns.AllergyType,
+                Diagnostic = patientId.Diagnostic
+            };
+
+            return patient;
+        }
+
+        
     }
 }

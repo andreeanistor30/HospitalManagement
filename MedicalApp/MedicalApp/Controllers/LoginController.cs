@@ -16,7 +16,7 @@ namespace MedicalApp.Controllers
             this.service = service;
         }
 
-        [HttpPost("/patient")]
+        [HttpPost("patient")]
         [AllowAnonymous]
 
         public ActionResult<LoginDTO> LoginPatient(LoginDTO userDTO)
@@ -30,7 +30,7 @@ namespace MedicalApp.Controllers
 
         }
 
-        [HttpPost("/doctor")]
+        [HttpPost("doctor")]
         [AllowAnonymous]
 
         public ActionResult<LoginDTO> LoginDoctor(LoginDTO userDTO)
@@ -43,7 +43,7 @@ namespace MedicalApp.Controllers
                 return Ok(doctor);
         }
 
-        [HttpPost("/nurse")]
+        [HttpPost("nurse")]
         [AllowAnonymous]
 
         public ActionResult<LoginDTO> LoginNurse(LoginDTO userDTO)

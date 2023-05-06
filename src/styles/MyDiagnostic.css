@@ -1,0 +1,111 @@
+.myPersonalDetails-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.titles{
+    display: flex;
+    flex-direction: row;
+}
+
+.vital-title{
+    width: 184px;
+    height: 33px;
+    margin-left: 55px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    color: black;
+}
+
+.title-line-vital{
+    width: 400px;
+    height: 0px;
+    margin-left: 8px;
+    margin-top: 0px;
+    border-color: rgba(128, 128, 128, 0.49);
+    border-width: thin;
+    border-style: solid;
+    transform: rotate(-0.12deg);
+}
+
+.title-line-allergies{
+    width: 400px;
+    height: 0px;
+    margin-left: 400px;
+    margin-top: 0px;
+    border-color: rgba(128, 128, 128, 0.49);
+    border-width: thin;
+    border-style: solid;
+    transform: rotate(-0.12deg);
+}
+
+.f-title{
+    display: flex;
+    flex-direction: column;
+}
+
+.a-title{
+    display: flex;
+    flex-direction: column;
+}
+
+.allergies-title{
+    width: 184px;
+    height: 33px;
+    margin-left: 450px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    color: black;
+}
+
+.myweight{
+    width: 94px;
+    height: 24px;
+    margin-left: 55px;
+    margin-top: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+    white-space:nowrap;
+}
+
+.inpt{
+    width: 180px;
+    height: 24px;
+    margin-left: 55px;
+    margin-top: 15px;
+    border:none;
+    background: #EBEBEB;
+}
+
+.wght-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.myallergy{
+    width: 94px;
+    height: 24px;
+    margin-left: 450px;
+    margin-top: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+    white-space:nowrap;
+}

@@ -35,5 +35,24 @@ namespace MedicalApp.Service.AnalysisResultsService
 
 
         }
+        public IEnumerable<PatientResultDTO> GetResult()
+        {
+            var analysis = context.LaboratoryAnalyses.ToList();
+            List<PatientResultDTO> patients= new List<PatientResultDTO>();
+
+            for(int i=0;i<analysis.Count;i++)
+            {
+                var result = context.Results.Where(r => r.AnalysisId == analysis[i].Id).Select(res =>res.Result).FirstOrDefault();
+                var patient = new PatientResultDTO()
+                {
+                    TestName = analysis[i].TestName,
+                    Range = analysis[i].ReferenceRange,
+                    Units= analysis[i].Units,
+                    Result = result
+                };
+                patients.Add(patient);
+            }
+            return patients;
+        }
     }
 }

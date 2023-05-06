@@ -16,6 +16,7 @@ namespace MedicalApp.Controllers
         }
 
         [HttpPost]
+        [Route("/addVitalSigns")]
         public ActionResult<VitalSignsDTO> AddVitalSigns(VitalSignsDTO vitalSignsDTO)
         {
             var vitalSigns = service.AddVitalSigns(vitalSignsDTO);

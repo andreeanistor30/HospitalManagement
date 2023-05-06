@@ -28,5 +28,18 @@ namespace MedicalApp.Controllers
             else
                 return NotFound(analysis);
         }
+
+        [HttpGet]
+        [Route("getresults")]
+
+        public ActionResult<IEnumerable<PatientResultDTO>> GetResult()
+        {
+            var analysis = service.GetResult();
+
+            if(analysis != null) 
+                return Ok(analysis);
+            else
+                return NotFound(analysis);
+        }
     }
 }

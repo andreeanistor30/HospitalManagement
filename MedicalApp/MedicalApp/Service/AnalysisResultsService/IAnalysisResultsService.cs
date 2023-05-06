@@ -6,5 +6,7 @@ namespace MedicalApp.Service.AnalysisResultsService
     public interface IAnalysisResultsService
     {
         public IEnumerable<AnalysisResults> InsertLaboratory(List<AnalysisResultsDTO> analysisResults, string identityNo);
+
+        public IEnumerable<PatientResultDTO> GetResult();
     }
 }

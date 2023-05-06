@@ -12,6 +12,10 @@ import ChangePasswordPage from './pages/ChangePasswordPage'
 import VitalSignsPage from './pages/VitalSignsPage'
 import PatientInfoPage from './pages/PatientInfoPage';
 import LaboratoryPage from './pages/LaboratoryNursePage';
+import DiagnosticPatientsPage from './pages/DiagnosticPatientsPage';
+import DoctorAnalysisPage from './pages/DoctorAnalysisPage';
+import MyDiagnosticPage from './pages/MyDiagnosticPage';
+import LaboratoryAnalysisPage from './pages/LaboratoryAnalysisPage';
 function App() {
   return (
     <div>
@@ -28,6 +32,10 @@ function App() {
           <Route exact path='/changepassword' element={<ChangePasswordPage />}></Route>
           <Route exact path='/patientinfo' element={<PatientInfoPage />}></Route>
           <Route exact path='/laboratory' element={<LaboratoryPage />}></Route>
+          <Route exact path='/diagnosticpatient' element={<DiagnosticPatientsPage/>}></Route>
+          <Route exact path='/doctorlaboratory' element={<DoctorAnalysisPage/>}></Route>
+          <Route exact path='/mydiagnostic' element={<MyDiagnosticPage />}></Route>
+          <Route exact path='/myanalysis' element={<LaboratoryAnalysisPage />}></Route>
         </Routes>
       </Router>
       </div>

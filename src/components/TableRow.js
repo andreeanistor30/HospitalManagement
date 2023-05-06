@@ -13,7 +13,6 @@ export default function TableRow({
 }){
     const onClickButton = async () => {
         const response = await DeletePatientApi(id);
-        console.log(id);
         getPatient();
     }
     return(

@@ -30,6 +30,7 @@ export default function VitalSigns() {
    }
 
    const onClickButton = async () => {
+    
       const response3 = await AddVitalSignsApi(
          formData4.identityno,
          formData4.weight,
@@ -41,7 +42,7 @@ export default function VitalSigns() {
          formData4.bloodpressure,
          formData4.allergytype,
          formData4.allergen
-      )
+      )  
       if (response3.isError === true)
          setErrorMessage("Invalid data");
       else

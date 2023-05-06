@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import '../styles/ChangePassword.css'
 import padlock from '../images/nurse-page/padlock.png'
-import ChangePasswordApi from "../api/ChangePasswordApi"
+import ChangePasswordApi from "../api/ChangePasswordNurseApi"
 export default function ChangePassword(){
     const [formData, setFormData] = useState({
         password: ""

@@ -1,0 +1,82 @@
+.doctor-tablerow-div{
+    display: flex;
+    flex-direction: row;
+    background-color: #EDF2FB;
+    width: 1087px;
+    height: 35px;
+    margin-left: 60px;
+}
+
+.age-image{
+    width: 30px;
+    height: 30px;
+    margin-left: 55px;
+    margin-top: 2px;
+}
+
+.full-name{
+    width: 14px;
+    height: 26px;
+    margin-left: 240px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.diag{
+    width: 14px;
+    height: 26px;
+    margin-left: 270px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space:nowrap;
+}
+
+.edit{
+    width: 25px;
+    height: 25px;
+    margin-left: 300px;
+    margin-top: 2px;
+}
+.analysis-div-row-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top:10px;
+  }
+  
+  .analysis-div-row {
+    width: calc(50% - 8px);
+    margin-bottom: 16px;
+  }
+
+.analysis-div-green{
+    width: 135px;
+    height: 47px;
+    background: #CCD5AE;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-left:20px;
+    margin-top: 20px;
+}
+.analysis-div-red{
+    width: 135px;
+    height: 47px;
+    background: #DE3C4B;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-left:20px;
+    margin-top: 20px;
+}

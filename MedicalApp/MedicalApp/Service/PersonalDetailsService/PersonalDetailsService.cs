@@ -17,14 +17,15 @@ namespace MedicalApp.Service.NurseService
 
             var patient = new PersonalDetails()
             {
-                DateOfBirth= personalDetailsDTO.DateOfBirth,
-                MaritalStatus= personalDetailsDTO.MaritalStatus,
-                Religion= personalDetailsDTO.Religion,
-                IdentityNo= personalDetailsDTO.IdentityNo,
-                Occupation= personalDetailsDTO.Occupation,
-                Gender= personalDetailsDTO.Gender,
-                Nationality= personalDetailsDTO.Nationality,
-                Email= personalDetailsDTO.Email
+                DateOfBirth = personalDetailsDTO.DateOfBirth,
+                MaritalStatus = personalDetailsDTO.MaritalStatus,
+                Religion = personalDetailsDTO.Religion,
+                IdentityNo = personalDetailsDTO.IdentityNo,
+                Occupation = personalDetailsDTO.Occupation,
+                Gender = personalDetailsDTO.Gender,
+                Nationality = personalDetailsDTO.Nationality,
+                Email = personalDetailsDTO.Email,
+                Age = DateTime.Now.Year - personalDetailsDTO.DateOfBirth.Year
 
             };
 

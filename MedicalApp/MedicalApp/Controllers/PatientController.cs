@@ -1,4 +1,5 @@
 ﻿using MedicalApp.DataTransferObject;
+using MedicalApp.Models.Domain;
 using MedicalApp.Service.PatientService;
 using Microsoft.AspNetCore.Mvc;
 
@@ -76,5 +77,42 @@ namespace MedicalApp.Controllers
             else
                 return NotFound();
         }
+
+        [HttpGet]
+        [Route("getbyidentityno")]
+
+        public ActionResult<Patient> GetByIdentityNo(string identityNo)
+        {
+            var patient = service.GetByIdentityNo(identityNo);
+            if (patient != null)
+                return Ok(patient);
+            else 
+                return NotFound();
+        }
+
+        [HttpGet]
+        [Route("getanalysisResult")]
+
+        public ActionResult<IEnumerable<AnalysisDTO>> GetAnalysisResult(string identityNo)
+        {
+            var results = service.GetResultsOfAPatient(identityNo);
+            if (results != null)
+                return Ok(results);
+            else 
+                return NotFound();
+        }
+
+        [HttpGet]
+        [Route("getdetails")]
+        
+        public ActionResult<PatientDiagnosticDTO> GetDetails(string firstName,string lastName)
+        {
+            var results = service.GetPatientDiagnostics(firstName, lastName);
+            if(results != null)
+                return Ok(results);
+            else
+                return NotFound();
+        }
+
     }
 }

@@ -16,7 +16,7 @@ namespace MedicalApp.Controllers
         }
 
         [HttpGet]
-        [Route("/getall")]
+        [Route("getall")]
         public ActionResult<LaboratoryAnalysisDTO> GetPatients()
         {
             var patients = service.GetAll();

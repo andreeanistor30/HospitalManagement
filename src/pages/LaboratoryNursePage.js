@@ -61,7 +61,12 @@ export default function LaboratoryNursePage(){
             laboratorydata={identityData.identityno}
             onChangeLaboratory={handleFormData}
             />
-            <LaboratoryTable />
+             <LaboratoryTable 
+                firstColumn="Test name"
+                secondColumn="Results"
+                thirdColumn="Units"
+                forthColumn="Reference range"
+            />
             {data !== undefined && data.map(((item, index) =>(
             <LaboratoryTableRow
                 item={item}

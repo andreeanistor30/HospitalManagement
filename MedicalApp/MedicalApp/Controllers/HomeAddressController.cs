@@ -17,6 +17,7 @@ namespace MedicalApp.Controllers
         }
 
         [HttpPost]
+        [Route("/addHomeAddress")]
         public ActionResult<HomeAddressDTO> AddHomeAddress(HomeAddressDTO homeAddressDTO)
         {
             var homeAddress = service.AddHomeAddress(homeAddressDTO);

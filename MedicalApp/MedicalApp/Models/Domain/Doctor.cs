@@ -23,6 +23,8 @@ namespace MedicalApp.Models.Domain
 
         public string Password { get; set; }
 
+        public string Gender { get; set; }
+
         public virtual ICollection<Patient> Patients { get; set; }
 
     }
