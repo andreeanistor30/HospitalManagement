@@ -21,5 +21,7 @@ namespace MedicalApp.Service.PatientService
 
         public PatientDiagnosticDTO GetPatientDiagnostics(string firstName, string lastName);
 
+        public bool ChangePassword(string identityNo, string password);
+
     }
 }

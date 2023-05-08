@@ -137,7 +137,7 @@ export default function AddPatientBody() {
 
             <div className="dateofbirth-div">
                 <h3 className="dateofbirth">Date of birth</h3>
-                <input name="dateofbirth" type="search" className="dateofbirth-input" value={formData2.dateofbirth} onChange={handleFormData1} />
+                <input name="dateofbirth" type="date" className="dateofbirth-input" value={formData2.dateofbirth} onChange={handleFormData1} />
                 <h3 className="gender">Gender</h3>
                 <input name="gender" type="search" className="gender-input" value={formData2.gender} onChange={handleFormData1} />
             </div>

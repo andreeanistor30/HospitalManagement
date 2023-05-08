@@ -416,6 +416,7 @@
     background: #CCDBFD;
     border: none;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .doctor-div{

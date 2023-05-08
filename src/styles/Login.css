@@ -108,6 +108,8 @@ h2{
     background: rgba(0, 153, 204, 0.84);
     border:0;
     border-radius: 4px;
+    cursor: pointer;
+    position: fixed;
 }
 
 .role{
@@ -122,9 +124,12 @@ h2{
 
 .container-nurse{
     margin-left: 40px;
+}
+.container-admin{
+    margin-top:0;
+    margin-left: 40px;
     margin-bottom: 20px;
 }
-
 .checkmark{
     font-family: 'Nobile';
     font-style: normal;

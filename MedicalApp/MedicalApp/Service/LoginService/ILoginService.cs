@@ -10,5 +10,7 @@ namespace MedicalApp.Service.LoginService
         public Doctor LoginDoctor(LoginDTO doctorDTO);
 
         public Nurse LoginNurse(LoginDTO nurseDTO);
+
+        public Admin LoginAdmin(LoginDTO adminDTO);
     }
 }

@@ -6,6 +6,7 @@ import DoctorLoginApi from "../api/DoctorLoginApi"
 import NurseLoginApi from "../api/NurseLoginApi"
 import { useNavigate } from "react-router-dom"
 import PatientLoginApi from "../api/PatientLoginApi"
+import AdminLoginApi from "../api/AdminLoginApi"
 export default function Login() {
     const [formData, setFormData] = useState({
         username: "",
@@ -16,6 +17,7 @@ export default function Login() {
     const [errorMessage, setErrorMessage] = useState("");
     const [isCheckedDoctor, setIsCheckedDoctor] = useState(false);
     const [isCheckedNurse, setIsCheckedNurse] = useState(false);
+    const [isCheckedAdmin,setIsCheckedAdmin] = useState(false);
 
     const navigate = useNavigate();
 
@@ -26,6 +28,11 @@ export default function Login() {
     const handleCheckboxChangeNurse = (event) => {
         setIsCheckedNurse(event.target.checked);
     }
+
+    const handleCheckboxChangeAdmin = (event) =>{
+        setIsCheckedAdmin(event.target.checked);
+    }
+    
     const handleFormData = (event) => {
         const { name, value } = event.target
         setFormData(prevFormData => {
@@ -69,21 +76,37 @@ export default function Login() {
                     localStorage.setItem("user", JSON.stringify({
                         firstName: response.firstName,
                         lastName: response.lastName,
-                        gender: response.gender
+                        gender: response.gender,
+                        phone: response.phone,
+                        user:"doctor"
                     }))
                 }
             }
             else if (isCheckedNurse) {
                 response = await NurseLoginApi(
                     formData.username,
-                    formData.password,
+                    formData.password
                 )
                 if (!response.isError) {
                     navigate("/nursemainpage");
                     localStorage.setItem("user", JSON.stringify({
                         firstName: response.firstName,
                         lastName: response.lastName,
-                        gender: response.gender
+                        gender: response.gender,
+                        phone: response.phone,
+                        user:"nurse"
+                    }))
+                }
+            }
+            else if(isCheckedAdmin){
+                response = await AdminLoginApi(
+                    formData.username,
+                    formData.password
+                )
+                if(!response.isError){
+                    navigate("/adminpage");
+                    localStorage.setItem("user",JSON.stringify({
+                        username: response.userName
                     }))
                 }
             }
@@ -93,12 +116,15 @@ export default function Login() {
                     formData.password
                 )
                 if (!response.isError) {
+                    console.log(response);
                     navigate("/patientpage");
                     localStorage.setItem("user", JSON.stringify({
                         firstName: response.firstName,
                         lastName: response.lastName,
                         gender: response.personalDetails.gender,
-                        age : response.personalDetails.age
+                        age : response.personalDetails.age,
+                        identityNo : response.personalDetails.identityNo,
+                        user:"patient"
                     }))
                 }
             }
@@ -133,14 +159,17 @@ export default function Login() {
                 <div className="role">
                     <label class="container-doctor">
                         <input type="checkbox" checked={isCheckedDoctor} onChange={handleCheckboxChangeDoctor} />
-                        <span class="checkmark" >I'm a doctor</span>
+                        <span class="checkmark" >I'm doctor</span>
                     </label>
 
                     <label class="container-nurse">
                         <input type="checkbox" checked={isCheckedNurse} onChange={handleCheckboxChangeNurse} />
-                        <span class="checkmark" >I'm a nurse</span>
+                        <span class="checkmark" >I'm nurse</span>
                     </label>
-
+                    <label className="container-admin">
+                        <input type="checkbox" checked={isCheckedAdmin} onChange={handleCheckboxChangeAdmin} />
+                        <span class="checkmark">I'm admin</span>
+                    </label>
                 </div>
                 <div className="footer">
                 {errorMessage ? <p className='err-message'>{errorMessage}</p> : <div className='no-er-message'> </div>}

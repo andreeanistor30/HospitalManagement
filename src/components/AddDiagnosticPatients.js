@@ -18,10 +18,11 @@ export default function AddDiagnosticPatients() {
         respiratoryRate: '',
         age: ''
     })
+    const [errorMessage, setErrorMessage] = useState("");
+    const [errorMessage1, setErrorMessage1] = useState("");
     const onClick = async () => {
         const patient = await GetByIdentityNoApi(formData1.identityno);
-        console.log(patient);
-        if (patient) {
+        if (!patient.isError) {
             const firstname = patient.firstName + " " + patient.lastName;
             const dateofbirth = patient.personalDetails.dateOfBirth;
             const email = patient.personalDetails.email;
@@ -53,13 +54,18 @@ export default function AddDiagnosticPatients() {
 
             })
         }
+        else
+        {
+            setErrorMessage("The patient with this identity no doesn't exist");
+        }
 
 
     }
 
     const saveClick = async () => {
         const resp = await AddDetailsApi(diagnostic.diagnostic, diagnostic.treatment, formData1.identityno);
-        console.log(resp);
+        if(resp.isError)
+            setErrorMessage1("Invalid data");
     }
 
     const [formData1, setFormData1] = useState({
@@ -107,7 +113,10 @@ export default function AddDiagnosticPatients() {
             <div className="src-div">
                 <h2 className="txt">Identity no</h2>
                 <input name="identityno" value={formData1.identityno} type="search" className="input-search" onChange={handleFormData} />
+                <div className="src-err">
                 <button className="src-button" onClick={onClick}>Search</button>
+                {errorMessage ? <p className='err-message-identity-no'>{errorMessage}</p> : <div className='no-er-message-identity-no'> </div>}
+                </div>
             </div>
             <div className="diagnostic-div">
                 <img src={image} className="icon"/>
@@ -140,9 +149,12 @@ export default function AddDiagnosticPatients() {
 
             <div className="src-div">
                 <h2 className="txt">Treatment</h2>
-                <textarea className="treatment-search" name="treatment" value={diagnostic.treatment} onChange={handleFormDataDiagnostic} />
+                <textarea className="treatment-search" name="treatment" value={diagnostic.treatment} onChange={handleFormDataDiagnostic} placeholder="Drug1 frecvency/day, Drug2 frecvency/day ..."/>
             </div>
+            <div className="save-err">
+            {errorMessage1 ? <p className='err-message-save'>{errorMessage1}</p> : <div className='no-er-message-save'> </div>}
             <button className="sv-btn" onClick={saveClick}>Save</button>
+            </div>
         </div>
     )
 }

@@ -309,6 +309,7 @@
     background: #CCDBFD;
     border: none;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 .footer-vital{

@@ -114,5 +114,15 @@ namespace MedicalApp.Controllers
                 return NotFound();
         }
 
+        [HttpPut]
+        public ActionResult UpdatePassword(string password,string identityNo)
+        {
+            var resp = service.ChangePassword(identityNo,password);
+
+            if (resp == true)
+                return Ok();
+            else
+                return NotFound();
+        }
     }
 }

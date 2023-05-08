@@ -1,9 +1,9 @@
 ﻿using MedicalApp.Models.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
 using System.Text;
 using XAct;
-using XSystem.Security.Cryptography;
 
 namespace MedicalApp.Service.DoctorService
 {
@@ -32,23 +32,13 @@ namespace MedicalApp.Service.DoctorService
             return patients;
         }
 
-        public bool ChangePassword(string firstName, string lastName, string password)
+        public bool ChangePassword(string phone, string password)
         {
-            var nurse = context.Doctors.Where(n => n.FirstName == firstName && n.LastName == lastName).FirstOrDefault();
+            var nurse = context.Doctors.Where(n => n.Phone == phone).FirstOrDefault();
 
             if (nurse != null)
             {
-                var passwordBytes = Encoding.ASCII.GetBytes(password);
-                byte[] hashBytes;
-
-                using (var md5 = new MD5CryptoServiceProvider())
-                {
-                    hashBytes = md5.ComputeHash(passwordBytes);
-                }
-
-                var hashString = Convert.ToBase64String(hashBytes);
-
-                nurse.Password = hashString;
+                nurse.Password = HashPassword(password);
                 context.SaveChanges();
                 return true;
 
@@ -56,6 +46,16 @@ namespace MedicalApp.Service.DoctorService
 
             else
                 return false;
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var md5 = MD5.Create())
+            {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = md5.ComputeHash(passwordBytes);
+                return Convert.ToBase64String(hashBytes);
+            }
         }
 
     }

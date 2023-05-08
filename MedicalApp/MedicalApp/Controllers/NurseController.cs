@@ -18,9 +18,9 @@ namespace MedicalApp.Controllers
 
         [HttpPut]
 
-        public ActionResult UpdatePassword(string password, string firstName, string lastName)
+        public ActionResult UpdatePassword(string password, string phone)
         {
-            var resp = service.ChangePassword(firstName, lastName, password);
+            var resp = service.ChangePassword(phone, password);
 
             if (resp == true)
                 return Ok();

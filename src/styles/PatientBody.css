@@ -55,6 +55,7 @@
     color: #000000;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .diagnostic-button-patient{
@@ -70,6 +71,7 @@
     color: #000000;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .analysis-button{
@@ -85,6 +87,7 @@
     color: #000000;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .second-row{
@@ -117,4 +120,5 @@
     color: #000000;
     background-color: white;
     border: none;
+    cursor: pointer;
 }

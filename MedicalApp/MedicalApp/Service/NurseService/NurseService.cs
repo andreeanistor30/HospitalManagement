@@ -1,7 +1,6 @@
 ﻿using MedicalApp.DataTransferObject;
+using System.Security.Cryptography;
 using System.Text;
-using XSystem.Security.Cryptography;
-
 namespace MedicalApp.Service.NurseService
 {
     public class NurseService:INurseService
@@ -13,23 +12,13 @@ namespace MedicalApp.Service.NurseService
             this.context = context;
         }
 
-        public bool ChangePassword(string firstName, string lastName, string password)
+        public bool ChangePassword(string phone, string password)
         {
-            var nurse = context.Nurses.Where(n=>n.FirstName == firstName && n.LastName == lastName).FirstOrDefault();
+            var nurse = context.Nurses.Where(n=>n.Phone == phone).FirstOrDefault();
 
             if (nurse != null)
-            {
-                var passwordBytes = Encoding.ASCII.GetBytes(password);
-                byte[] hashBytes;
-
-                using (var md5 = new MD5CryptoServiceProvider())
-                {
-                    hashBytes = md5.ComputeHash(passwordBytes);
-                }
-
-                var hashString = Convert.ToBase64String(hashBytes);
-
-                nurse.Password = hashString;
+            { 
+                nurse.Password = HashPassword(password);
                 context.SaveChanges();
                 return true;
 
@@ -37,6 +26,16 @@ namespace MedicalApp.Service.NurseService
 
             else
                 return false;
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var md5 = MD5.Create())
+            {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = md5.ComputeHash(passwordBytes);
+                return Convert.ToBase64String(hashBytes);
+            }
         }
     }
 }

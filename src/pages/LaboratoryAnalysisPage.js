@@ -7,7 +7,7 @@ import oldman from "../images/doctor-page/old-man.png"
 import oldwoman from "../images/doctor-page/grandmother.png"
 import LaboratoryTable from "../components/LaboratoryTable";
 import LaboratoryPatientRow from "../components/LaboratoryPatientRow";
-import GetResultsApi from "../api/GetResultsApi";
+import GetPatientAnalysisResult from "../api/GetPatientAnalysisResult";
 
 export default function LaboratoryAnalysisPage(){
     let image;
@@ -24,7 +24,7 @@ export default function LaboratoryAnalysisPage(){
           }
 
     const getPatients = async () =>{
-      const result = await GetResultsApi();
+      const result = await GetPatientAnalysisResult((JSON.parse(localStorage.getItem("user"))).identityNo);
       console.log(result);
       setResponse(result);
     }

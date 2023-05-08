@@ -22,7 +22,6 @@
 
         public string Allergen { get; set; }
 
-        public string Diagnostic { get; set; }
 
     }
 }

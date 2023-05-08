@@ -2,6 +2,6 @@
 {
     public interface INurseService
     {
-        public bool ChangePassword(string firstName, string lastName, string password);
+        public bool ChangePassword(string phone, string password);
     }
 }

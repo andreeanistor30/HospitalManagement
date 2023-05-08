@@ -7,6 +7,6 @@ namespace MedicalApp.Service.DoctorService
     {
         public Patient AddDetails(string diagnostic, string treatment, string identityno);
         public IEnumerable<Patient> GetPatientsOfADoctor(string firstName, string lastName);
-        public bool ChangePassword(string firstName, string lastName, string password);
+        public bool ChangePassword(string phone, string password);
     }
 }

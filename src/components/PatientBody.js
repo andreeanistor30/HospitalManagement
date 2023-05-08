@@ -3,7 +3,6 @@ import "../styles/PatientBody.css"
 import treatment from "../images/patient-page/Treatment.png"
 import diagnostic from "../images/patient-page/Diagnostics.png"
 import analysis from "../images/patient-page/Analysis.png"
-import history from "../images/patient-page/History.png"
 import setting from "../images/patient-page/Settings.png"
 import { useNavigate } from "react-router-dom"
 export default function DoctorBody(){
@@ -15,6 +14,10 @@ export default function DoctorBody(){
 
     const myAnalysisClick= () =>{
         navigate('/myanalysis')
+    }
+
+    const onClickSettings = () => {
+        navigate('/settings')
     }
     return(
         <div>
@@ -37,7 +40,7 @@ export default function DoctorBody(){
             </div>
 
             <div className="second-row-buttons">
-                <button className="settings-button">SETTINGS</button>
+                <button className="settings-button" onClick={onClickSettings}>SETTINGS</button>
             </div> 
         </div>
     );

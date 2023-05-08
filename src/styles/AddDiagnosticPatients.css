@@ -32,6 +32,7 @@
     margin-top: 40px;
     background: #ABC4FF;
     border: none;
+    cursor: pointer;
 }
 
 .diagnostic-div{
@@ -112,11 +113,13 @@
 .sv-btn{
     width: 150px;
     height: 40px;
+    margin-top:50px;
     margin-left: 1264px;
-    margin-top: 100px;
     background: #CCDBFD;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
 }
 
 .Row{
@@ -136,5 +139,53 @@
     line-height: 24px;
     color: #000000;
     white-space: nowrap;
+}
+
+.src-err{
+    display: flex;
+    flex-direction: row;
+}
+
+.err-message-identity-no{
+    font-style: normal;
+    color:red;
+    margin-left:40px;
+    margin-top:40px;
+    font-size:15px;
+    white-space:nowrap;
+}
+
+.no-er-message-identity-no{
+    font-style: normal;
+    margin-left:40px;
+    margin-top:40px;
+    font-size:15px;
+    white-space:nowrap;
+    width: 45px;
+    height: 32px;
+}
+
+.save-err{
+    display: flex;
+    flex-direction: column;
+}
+
+.err-message-save{
+    margin-bottom: 0px;
+    margin-left: 1300px;
+    font-style: normal;
+    color:red;
+    font-size:15px;
+    white-space:nowrap;
+}
+
+.no-er-message-save{
+    margin-bottom: 0px;
+    margin-left: 1000px;
+    font-style: normal;
+    font-size:15px;
+    white-space:nowrap;
+    width: 45px;
+    height: 32px;
 }
 

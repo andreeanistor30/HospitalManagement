@@ -1,8 +1,8 @@
 ﻿using MedicalApp.DataTransferObject;
 using MedicalApp.Models.Domain;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
 using System.Text;
-using XSystem.Security.Cryptography;
 
 namespace MedicalApp.Service.LoginService
 {
@@ -17,15 +17,7 @@ namespace MedicalApp.Service.LoginService
 
         public Doctor LoginDoctor(LoginDTO loginDTO)
         {
-            var passwordBytes = Encoding.ASCII.GetBytes(loginDTO.Password);
-            byte[] hashBytes;
-
-            using (var md5 = new MD5CryptoServiceProvider())
-            {
-                hashBytes = md5.ComputeHash(passwordBytes);
-            }
-
-            var passwordHash = Convert.ToBase64String(hashBytes);
+            var passwordHash = HashPassword(loginDTO.Password);
 
             var doctor = context.Doctors.FirstOrDefault(u => u.UserName == loginDTO.Username && u.Password == passwordHash);
 
@@ -40,17 +32,10 @@ namespace MedicalApp.Service.LoginService
         }
         public Patient LoginPatient(LoginDTO loginDTO)
         {
-            var passwordBytes = Encoding.ASCII.GetBytes(loginDTO.Password);
-            byte[] hashBytes;
+            var passwordHash = HashPassword(loginDTO.Password);
 
-            using (var md5 = new MD5CryptoServiceProvider())
-            {
-                hashBytes = md5.ComputeHash(passwordBytes);
-            }
+            var patient = context.Patients.Include(p=>p.PersonalDetails).Include(p=>p.Results).FirstOrDefault(u => u.Username == loginDTO.Username && u.Password == passwordHash);
 
-            var passwordHash = Convert.ToBase64String(hashBytes);
-
-            var patient = context.Patients.Include(p=>p.PersonalDetails).FirstOrDefault(u => u.Username == loginDTO.Username && u.Password == passwordHash);
             if (patient != null)
             {
                 return patient; // Login successful
@@ -63,15 +48,7 @@ namespace MedicalApp.Service.LoginService
 
         public Nurse LoginNurse(LoginDTO loginDTO)
         {
-            var passwordBytes = Encoding.ASCII.GetBytes(loginDTO.Password);
-            byte[] hashBytes;
-
-            using (var md5 = new MD5CryptoServiceProvider())
-            {
-                hashBytes = md5.ComputeHash(passwordBytes);
-            }
-
-            var passwordHash = Convert.ToBase64String(hashBytes);
+            var passwordHash = HashPassword(loginDTO.Password);
 
             var nurse = context.Nurses.FirstOrDefault(u => u.UserName == loginDTO.Username && u.Password == passwordHash);
 
@@ -82,6 +59,32 @@ namespace MedicalApp.Service.LoginService
             else
             {
                 return null; // Login failed
+            }
+        }
+
+        public Admin LoginAdmin(LoginDTO loginDTO)
+        {
+            var passwordHash = HashPassword(loginDTO.Password);
+
+            var admin = context.Admins.FirstOrDefault(u => u.UserName == loginDTO.Username && u.Password == passwordHash);
+
+            if (admin != null)
+            {
+                return admin; // Login successful
+            }
+            else
+            {
+                return null; // Login failed
+            }
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var md5 = MD5.Create())
+            {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = md5.ComputeHash(passwordBytes);
+                return Convert.ToBase64String(hashBytes);
             }
         }
 

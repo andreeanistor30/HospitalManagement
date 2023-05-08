@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import nurseimg from "../images/nurse-page/nurse.png"
+import womanimage from "../images/nurse-page/nurse.png"
+import manimage from "../images/nurse-page/man-nurse.png"
 import Header from '../components/Header'
 import Laboratory from "../components/Laboratory"
 import LaboratoryTable from "../components/LaboratoryTable"
@@ -54,7 +55,7 @@ export default function LaboratoryNursePage(){
     return(
         <div>
             <Header
-            img={nurseimg}
+            img={(JSON.parse(localStorage.getItem("user"))).gender === 'F' ? womanimage : manimage}
             txt={(JSON.parse(localStorage.getItem("user"))).firstName}
             />
             <Laboratory 

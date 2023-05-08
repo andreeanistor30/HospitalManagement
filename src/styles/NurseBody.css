@@ -55,6 +55,7 @@
     color: #000000;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .remove-button{
@@ -70,6 +71,7 @@
     color: #000000;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .laboratory-button-nurse{
@@ -84,7 +86,8 @@
     line-height: 24px;
     color: #000000;
     background-color: white;
-    border: none
+    border: none;
+    cursor: pointer;
 }
 
 .second-row-nurse{
@@ -112,6 +115,7 @@
     color: #000000;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .setting-photo-nurse{
@@ -134,4 +138,5 @@
     color: #000000;
     background-color: white;
     border: none;
+    cursor: pointer;
 }

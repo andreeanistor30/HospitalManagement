@@ -3,6 +3,7 @@ using MedicalApp.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 using XAct;
 
@@ -47,10 +48,8 @@ namespace MedicalApp.Service.PatientService
                 Diagnostic = "-",
                 Treatment = "-"
             };
-            var tmpSource = ASCIIEncoding.ASCII.GetBytes(patient.Password);
-            byte[] tmpNewHash;
-            var savedPasswordHash = new XSystem.Security.Cryptography.MD5CryptoServiceProvider().ComputeHash(tmpSource);
-            patient.Password = Convert.ToHexString(savedPasswordHash);
+
+            patient.Password = HashPassword(patient.Password);
             var findDoctor = context.Doctors.Where(d => d.FirstName == patientDTO.DoctorName).FirstOrDefault();
             if (findDoctor != null)
             {
@@ -181,6 +180,31 @@ namespace MedicalApp.Service.PatientService
             return patient;
         }
 
-        
+        public bool ChangePassword(string identityNo, string password)
+        {
+            var persDetails = context.PersonalDetails.Where(p => p.IdentityNo == identityNo).FirstOrDefault();
+            if (persDetails != null)
+            {
+                var patient = context.Patients.Where(p => p.Id == persDetails.PatientId).FirstOrDefault();
+                patient.Password = HashPassword(password);
+                context.SaveChanges();
+                return true;
+            }
+            else
+                return false;
+            
+        }
+
+        private string HashPassword(string password)
+        {
+            using (var md5 = MD5.Create())
+            {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = md5.ComputeHash(passwordBytes);
+                return Convert.ToBase64String(hashBytes);
+            }
+        }
+
+
     }
 }

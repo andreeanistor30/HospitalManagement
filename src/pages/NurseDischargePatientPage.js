@@ -5,6 +5,8 @@ import TableHeader from "../components/TableHeader";
 import TableRow from "../components/TableRow";
 import DischargePatientApi from "../api/DischargePatientApi";
 import { useEffect} from "react";
+import womanimage from "../images/nurse-page/nurse.png"
+import manimage from "../images/nurse-page/man-nurse.png"
 export default function NurseDischargePatientPage() {
     let count = 1;
     const [response, setResponse] = useState(undefined);
@@ -33,7 +35,7 @@ export default function NurseDischargePatientPage() {
     return (
         <div>
             <Header
-                img={image}
+                img={(JSON.parse(localStorage.getItem("user"))).gender === 'F' ? womanimage : manimage}
                 txt={(JSON.parse(localStorage.getItem("user"))).firstName}
             />
             <TableHeader 

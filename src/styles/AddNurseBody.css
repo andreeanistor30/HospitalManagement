@@ -1,0 +1,73 @@
+.f-row-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.f-row-txt{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.f-row-in{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 20px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.personal-details-h3{
+    width: 184px;
+    height: 33px;
+    margin-left: 47px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 33px;
+    color: black;
+}
+
+.f-row-txt1{
+    width: 94px;
+    height: 24px;
+    margin-left: 500px;
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.dropdown-gender{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 20px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.add-btn{
+    width: 100px;
+    height: 30px;
+    margin-left: 1390px;
+    margin-top: 300px;
+    background: #CCDBFD;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

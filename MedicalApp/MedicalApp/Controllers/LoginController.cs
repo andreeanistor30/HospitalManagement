@@ -55,5 +55,18 @@ namespace MedicalApp.Controllers
             else
                 return Ok(nurse);
         }
+
+        [HttpPost("admin")]
+        [AllowAnonymous]
+
+        public ActionResult<LoginDTO> LoginAdmin(LoginDTO userDTO)
+        {
+            var admin = service.LoginAdmin(userDTO);
+
+            if (admin == null)
+                return BadRequest();
+            else
+                return Ok(admin);
+        }
     }
 }

@@ -33,6 +33,8 @@ namespace MedicalApp
 
         public DbSet<AnalysisResults> Results { get; set; } 
 
+        public DbSet<Admin> Admins { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=ANDREEA\\SQLEXPRESS;Database=HospitalDB;Trusted_Connection=True;TrustServerCertificate=True");
