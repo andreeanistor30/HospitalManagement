@@ -92,3 +92,4 @@ C:\Users\nisto\Facultate\An3 sem 2\II\Proiect\medical-app\MedicalApp\MedicalApp\
 C:\Users\nisto\Facultate\An3 sem 2\II\Proiect\medical-app\MedicalApp\MedicalApp\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\nisto\Facultate\An3 sem 2\II\Proiect\medical-app\MedicalApp\MedicalApp\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\nisto\Facultate\An3 sem 2\II\Proiect\medical-app\MedicalApp\MedicalApp\bin\Debug\net6.0\Swashbuckle.AspNetCore.Newtonsoft.dll
+C:\Users\nisto\Facultate\An3 sem 2\II\Proiect\medical-app\MedicalApp\MedicalApp\bin\Debug\net6.0\nunit.framework.dll

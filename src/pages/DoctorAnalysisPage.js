@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header"
 import womanimage from "../images/doctor-page/doctor1.png"
 import manimage from "../images/doctor-page/doctor.png"
-import Laboratory from "../components/Laboratory";
 import LaboratoryTable from "../components/LaboratoryTable";
 import DoctorTableRow from "../components/DoctorTableRow";
 import GetPatientsByDoctorNameApi from "../api/GetPatientsByDoctorNameApi";
