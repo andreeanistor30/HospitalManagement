@@ -9,6 +9,7 @@ import GetLaboratoryAnalysis from "../api/GetLaboratoryAnalysis"
 import { useEffect} from "react";
 import "../styles/LaboratoryNursePage.css"
 import AddAnalysisResultsApi from "../api/AddAnalysisResultsApi";
+import { toast } from "react-toastify";
 export default function LaboratoryNursePage(){
     const [data, setData] = useState(undefined);
     const laboratoryAnalysis = async () => {
@@ -37,6 +38,10 @@ export default function LaboratoryNursePage(){
             result: d.value
         }))
         const response = await AddAnalysisResultsApi(identityData.identityno,  body);
+        if(response.isError)
+            toast.error("Invalid data");
+        else
+            toast.error("Insert successfully");
     }
 
     const [identityData,setIdentityData] = useState({

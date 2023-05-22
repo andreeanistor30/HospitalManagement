@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../styles/Login.css"
 import username from "../images/login-page/User.png"
 import password from "../images/login-page/Password.png"
@@ -14,7 +16,6 @@ export default function Login() {
     })
     const [emptyUsernameError, setEmptyUsernameError] = useState(false);
     const [emptyPasswordError, setEmptyPasswordError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
     const [isCheckedDoctor, setIsCheckedDoctor] = useState(false);
     const [isCheckedNurse, setIsCheckedNurse] = useState(false);
     const [isCheckedAdmin,setIsCheckedAdmin] = useState(false);
@@ -46,17 +47,13 @@ export default function Login() {
     const validateFormData = () => {
         setEmptyUsernameError(false);
         setEmptyPasswordError(false);
-        setErrorMessage("");
         if (!formData.username && !formData.password) {
-            console.log("2");
             setEmptyPasswordError(true);
             setEmptyUsernameError(true);
-            setErrorMessage("Username and password are mandatory!");
             return false;
         }
         else if (!formData.username) {
             setEmptyPasswordError(true);
-            setErrorMessage("Username is mandatory");
             return false;
         }
         return true;
@@ -71,6 +68,7 @@ export default function Login() {
                     formData.username,
                     formData.password
                 )
+                console.log(response);
                 if (!response.isError) {
                     navigate("/doctorpage");
                     localStorage.setItem("user", JSON.stringify({
@@ -111,7 +109,7 @@ export default function Login() {
                 }
             }
             else {
-                response = await PatientLoginApi(
+                response = await PatientLoginApi( 
                     formData.username,
                     formData.password
                 )
@@ -130,13 +128,10 @@ export default function Login() {
             }
 
             if (response.isError) {
-                console.log('No');
+                toast.error("Invalid credentials");
                 setEmptyPasswordError(true);
                 setEmptyUsernameError(true);
-                setErrorMessage("Invalid credentials!");
             }
-
-            console.log(response);
             return true;
         }
 
@@ -149,33 +144,33 @@ export default function Login() {
                 <h3 className="username-text">Username</h3>
                 <div className="username">
                     <img src={username} className="username-image" />
-                    <input type="text" name="username" className="username-input" onChange={handleFormData} emptyFieldError={emptyUsernameError} value={formData.username} />
+                    <input type="text" name="username" className="username-input" onChange={handleFormData} emptyFieldError={emptyUsernameError} value={formData.username} autoComplete="off"/>
                 </div>
                 <h3 className="password-text">Password</h3>
                 <div className="password">
                     <img src={password} className="password-image" />
-                    <input type="password" name="password" className="password-input" onChange={handleFormData} emptyFieldError={emptyPasswordError} value={formData.password} />
+                    <input type="password" name="password" className="password-input" onChange={handleFormData} emptyFieldError={emptyPasswordError} value={formData.password} autoComplete="off"/>
                 </div>
                 <div className="role">
                     <label class="container-doctor">
-                        <input type="checkbox" checked={isCheckedDoctor} onChange={handleCheckboxChangeDoctor} />
+                        <input type="checkbox" checked={isCheckedDoctor} onChange={handleCheckboxChangeDoctor} autoComplete="off"/>
                         <span class="checkmark" >I'm doctor</span>
                     </label>
 
                     <label class="container-nurse">
-                        <input type="checkbox" checked={isCheckedNurse} onChange={handleCheckboxChangeNurse} />
+                        <input type="checkbox" checked={isCheckedNurse} onChange={handleCheckboxChangeNurse} autoComplete="off"/>
                         <span class="checkmark" >I'm nurse</span>
                     </label>
                     <label className="container-admin">
-                        <input type="checkbox" checked={isCheckedAdmin} onChange={handleCheckboxChangeAdmin} />
+                        <input type="checkbox" checked={isCheckedAdmin} onChange={handleCheckboxChangeAdmin} autoComplete="off"/>
                         <span class="checkmark">I'm admin</span>
                     </label>
                 </div>
                 <div className="footer">
-                {errorMessage ? <p className='err-message'>{errorMessage}</p> : <div className='no-er-message'> </div>}
                 <button className="login-button" onClick={loginFunction}>Sign in</button>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

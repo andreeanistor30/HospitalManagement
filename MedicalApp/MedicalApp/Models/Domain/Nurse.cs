@@ -24,5 +24,7 @@ namespace MedicalApp.Models.Domain
         public string Password { get; set; }
 
         public string Gender { get; set; }
+
+        public string IdentityNo { get; set; }
     }
 }

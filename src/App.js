@@ -19,6 +19,8 @@ import LaboratoryAnalysisPage from './pages/LaboratoryAnalysisPage';
 import AdminPage from "./pages/AdminPage.js"
 import AddDoctorPage from './pages/AddDoctorPage';
 import AddNursePage from './pages/AddNursePage';
+import PrescriptionMedicinePage from './pages/PrescriptionMedicinePage';
+import TreatmentRegimenPage from './pages/TreatmentRegimenPage';
 function App() {
   return (
     <div>
@@ -42,6 +44,8 @@ function App() {
           <Route exact path='/adminpage' element={<AdminPage />}></Route>
           <Route exact path='/addnurse' element={<AddNursePage />}></Route>
           <Route exact path='/adddoctor' element={<AddDoctorPage />}></Route>
+          <Route exact path='/prescriptionmedicine' element={<PrescriptionMedicinePage />}></Route>
+          <Route exact path='/treatmentregimen' element={<TreatmentRegimenPage />}></Route>
         </Routes>
       </Router>
       </div>

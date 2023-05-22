@@ -17,9 +17,9 @@ namespace MedicalApp.Controllers
 
         [HttpPost]
         [Route("addDiagnostic")]
-        public ActionResult<Patient> InsertDiagnostic(string diagnostic, string treatment, string identityno)
+        public ActionResult<Patient> InsertDiagnostic(string diagnostic, string identityno)
         {
-            var patient = service.AddDetails(diagnostic, treatment, identityno);
+            var patient = service.AddDetails(diagnostic, identityno);
 
             if (patient != null) return Ok(patient);
             else return NotFound();
@@ -43,6 +43,20 @@ namespace MedicalApp.Controllers
 
             if (resp == true)
                 return Ok();
+            else
+                return NotFound();
+        }
+
+        [HttpGet]
+        [Route("getAllDoctors")]
+
+        public ActionResult<List<Doctor>> GetDoctors()
+        {
+            var response = service.GetDoctors();
+
+            if (response != null)
+                return Ok(response);
+          
             else
                 return NotFound();
         }

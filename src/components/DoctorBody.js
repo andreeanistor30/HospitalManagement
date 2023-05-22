@@ -4,6 +4,7 @@ import info from "../images/doctor-page/Info.png"
 import diagnostic from "../images/doctor-page/Diagnostic.png"
 import laboratory from "../images/doctor-page/laboratory.png"
 import setting from "../images/doctor-page/Settings.png"
+import medicalprescription from "../images/doctor-page/prescription.png"
 import { useNavigate } from "react-router-dom"
 export default function DoctorBody(){
     const navigate = useNavigate();
@@ -23,7 +24,9 @@ export default function DoctorBody(){
     const onClickPatientsInfo = () =>{
         navigate('/patientinfo')
     }
-
+    const onClickPrescription = () =>{
+        navigate('/prescriptionmedicine')
+    }
     return(
         <div>
             <h2 className="dashboard">Dashboard</h2>
@@ -41,10 +44,12 @@ export default function DoctorBody(){
             </div>
 
             <div className="second-row">
+                <img src={medicalprescription} className="medical-prescription" />
                 <img src={setting} className="setting-photo-doctor" />
             </div>
 
             <div className="second-row-buttons">
+            <button className="medicalprescription-button" onClick={onClickPrescription}>MEDICAL PRESCRIPTION</button>
                 <button className="settings-button" onClick={onClickSettings}>SETTINGS</button>
             </div>
         </div>

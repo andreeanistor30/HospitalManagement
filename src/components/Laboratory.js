@@ -7,7 +7,7 @@ export default function Laboratory({
         <div>
             <div className="id-div">
             <h3 className="id-txt">Identity No.</h3>
-            <input name="identityno" type="search" className="id-input" value={laboratorydata} onChange={onChangeLaboratory}/>
+            <input name="identityno" type="search" className="id-input" value={laboratorydata} onChange={onChangeLaboratory} autoComplete="off"/>
             </div>
 
             <h2 className="analysis-results">Analysis Results</h2>

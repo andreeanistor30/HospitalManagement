@@ -25,7 +25,8 @@ namespace MedicalApp.Service.AdminService
                 Phone = nurseDTO.Phone,
                 UserName= nurseDTO.UserName,
                 Password= HashPassword(nurseDTO.Password),
-                Gender = nurseDTO.Gender
+                Gender = nurseDTO.Gender,
+                IdentityNo= nurseDTO.IdentityNo
             };
             context.Nurses.Add(nurse);
             context.SaveChanges();
@@ -43,7 +44,8 @@ namespace MedicalApp.Service.AdminService
                 Phone = doctorDTO.Phone,
                 UserName= doctorDTO.UserName,
                 Password = HashPassword(doctorDTO.Password),
-                Gender = doctorDTO.Gender
+                Gender = doctorDTO.Gender,
+                IdentityNo= doctorDTO.IdentityNo
             };
             context.Doctors.Add(doctor);
             context.SaveChanges();
@@ -61,6 +63,33 @@ namespace MedicalApp.Service.AdminService
             context.Admins.Add(admin);
             context.SaveChanges();
             return adminDTO;
+        }
+
+        public bool RemoveDoctorOrNurse(string identityNo, string type)
+        {
+            if(type == "Doctor")
+            {
+                var findDoctor = context.Doctors.Where(d=>d.IdentityNo== identityNo).FirstOrDefault();
+                if (findDoctor != null)
+                {
+                    context.Doctors.Remove(findDoctor);
+                    context.SaveChanges();
+                    return true;
+                }
+                else return false;
+                
+            }
+            else
+            {
+                var findNurse = context.Nurses.Where(d => d.IdentityNo == identityNo).FirstOrDefault();
+                if (findNurse != null)
+                {
+                    context.Nurses.Remove(findNurse);
+                    context.SaveChanges();
+                    return true;
+                }
+                else return false;
+            }
         }
 
         private string HashPassword(string password)

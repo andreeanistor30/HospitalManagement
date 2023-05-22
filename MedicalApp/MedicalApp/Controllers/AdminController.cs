@@ -48,8 +48,20 @@ namespace MedicalApp.Controllers
             else 
                 return NotFound(adminDTO);
         }
-        
 
+        [HttpDelete]
+        [Route("deleteNurseOrDoctor")]
+
+        public ActionResult DeleteNurseOrDoctor(string identityNo, string type)
+        {
+            var response = service.RemoveDoctorOrNurse(identityNo, type);
+
+            if (response)
+                return Ok();
+            else
+                return NotFound();
+        }
+        
 
     }
 }

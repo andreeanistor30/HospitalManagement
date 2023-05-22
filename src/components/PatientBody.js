@@ -5,21 +5,24 @@ import diagnostic from "../images/patient-page/Diagnostics.png"
 import analysis from "../images/patient-page/Analysis.png"
 import setting from "../images/patient-page/Settings.png"
 import { useNavigate } from "react-router-dom"
-export default function DoctorBody(){
+export default function DoctorBody() {
     const navigate = useNavigate();
 
-    const myDiagnosticClick= () => {
+    const myDiagnosticClick = () => {
         navigate('/mydiagnostic')
     }
 
-    const myAnalysisClick= () =>{
+    const myAnalysisClick = () => {
         navigate('/myanalysis')
     }
 
     const onClickSettings = () => {
         navigate('/settings')
     }
-    return(
+    const myTreatmentClick = () => {
+        navigate('/treatmentregimen')
+    }
+    return (
         <div>
             <h2 className="dashboard-patient">Dashboard</h2>
 
@@ -30,18 +33,18 @@ export default function DoctorBody(){
             </div>
 
             <div className="first-row-buttons-patient">
-                <button className="treatment-button" >TREATMENT REGIMEN</button>
+                <button className="treatment-button" onClick={myTreatmentClick}>TREATMENT REGIMEN</button>
                 <button className="diagnostic-button-patient" onClick={myDiagnosticClick}>MY DIAGNOSTIC</button>
                 <button className="analysis-button" onClick={myAnalysisClick}>MEDICAL ANALYSIS</button>
             </div>
 
-             <div className="second-row-patient">
+            <div className="second-row-patient">
                 <img src={setting} className="setting-photo-patient" />
             </div>
 
             <div className="second-row-buttons">
-                <button className="settings-button" onClick={onClickSettings}>SETTINGS</button>
-            </div> 
+                <button className="settings-button-patient" onClick={onClickSettings}>SETTINGS</button>
+            </div>
         </div>
     );
 }

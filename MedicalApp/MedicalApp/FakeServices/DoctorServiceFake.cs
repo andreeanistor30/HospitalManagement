@@ -6,14 +6,14 @@ using System.Text;
 
 namespace MedicalApp.FakeServices
 {
-    public class DoctorServiceFake:IDoctorService
+    public class DoctorServiceFake : IDoctorService
     {
         private readonly List<Doctor> doctors;
         private readonly List<Patient> patients;
 
         public DoctorServiceFake()
         {
-            
+
 
             doctors = new List<Doctor>()
             {
@@ -46,25 +46,50 @@ namespace MedicalApp.FakeServices
 
                 }
             };
+
+
         }
 
-        public Patient? AddDetails(string diagnostic, string treatment, string identityno)
+
+        public Patient AddDetails(string diagnostic, string identityno)
         {
-            throw new NotImplementedException();
+            var doctor = doctors.FirstOrDefault();
+            var personalDetails = new PersonalDetails()
+            {
+                IdentityNo = identityno,
+            };
+
+            if (doctor != null)
+            {
+                var patient = patients.FirstOrDefault();
+
+                if (patient != null)
+                {
+                    patient.Diagnostic = diagnostic;
+                    return patient;
+                }
+            }
+
+            return null;
         }
 
         public bool ChangePassword(string phone, string password)
         {
-            var doctor = doctors.Where(d=>d.Phone == phone).FirstOrDefault();
+            var doctor = doctors.Where(d => d.Phone == phone).FirstOrDefault();
             if (doctor != null)
             {
                 var passw = HashPassword(doctor.Password);
-                doctor.Password= password;
+                doctor.Password = password;
                 return true;
             }
             else
                 return false;
 
+        }
+
+        public List<Doctor> GetDoctors()
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<Patient> GetPatientsOfADoctor(string firstName, string lastName)

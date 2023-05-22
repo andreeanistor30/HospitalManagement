@@ -1,4 +1,6 @@
 import React from "react"
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react"
 import AddNurseApi from "../api/AddNurseApi"
 import "../styles/AddNurseBody.css"
@@ -13,6 +15,7 @@ export default function AddNurseBody() {
     username: "",
     password: "",
     gender: "F", // default to "F" to avoid empty string value
+    identityNo: ""
   })
 
   const onClickAddNurse = async () => {
@@ -24,9 +27,13 @@ export default function AddNurseBody() {
       formData.phone,
       formData.username,
       formData.password,
-      formData.gender
+      formData.gender,
+      formData.identityNo
     )
-    return response
+    if (response.isError)
+      toast.error("Invalid data");
+    else
+      toast.success("Insert successfully");
   }
 
   const handleFormData = (event) => {
@@ -50,6 +57,7 @@ export default function AddNurseBody() {
           onChange={handleFormData}
           value={formData.firstname}
           name="firstname"
+          autoComplete="off"
         />
         <h3 className="f-row-txt1">Phone</h3>
         <input
@@ -58,6 +66,7 @@ export default function AddNurseBody() {
           onChange={handleFormData}
           value={formData.phone}
           name="phone"
+          autoComplete="off"
         />
       </div>
 
@@ -69,6 +78,7 @@ export default function AddNurseBody() {
           onChange={handleFormData}
           value={formData.lastname}
           name="lastname"
+          autoComplete="off"
         />
         <h3 className="f-row-txt1">Username</h3>
         <input
@@ -77,6 +87,7 @@ export default function AddNurseBody() {
           onChange={handleFormData}
           value={formData.username}
           name="username"
+          autoComplete="off"
         />
       </div>
 
@@ -88,6 +99,7 @@ export default function AddNurseBody() {
           onChange={handleFormData}
           value={formData.dateofbirth}
           name="dateofbirth"
+          autoComplete="off"
         />
         <h3 className="f-row-txt1">Password</h3>
         <input
@@ -96,6 +108,7 @@ export default function AddNurseBody() {
           onChange={handleFormData}
           value={formData.password}
           name="password"
+          autoComplete="off"
         />
       </div>
 
@@ -107,6 +120,7 @@ export default function AddNurseBody() {
           onChange={handleFormData}
           value={formData.address}
           name="address"
+          autoComplete="off"
         />
         <h3 className="f-row-txt1">Gender</h3>
         <select
@@ -119,6 +133,18 @@ export default function AddNurseBody() {
           <option value="M">M</option>
         </select>
       </div>
+      <div className="identity-div">
+        <h3 className="ident-no-h3">Identity no</h3>
+        <input
+          type="number"
+          className="ident-no-input"
+          onChange={handleFormData}
+          value={formData.identityNo}
+          name="identityNo"
+          autocomplete="off"
+        />
+      </div>
+      <ToastContainer />
                 <button className="add-btn" onClick={onClickAddNurse}>Add</button>
         </div>
     )

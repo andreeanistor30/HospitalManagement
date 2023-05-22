@@ -7,6 +7,8 @@ import oldman from "../images/doctor-page/old-man.png"
 import oldwoman from "../images/doctor-page/grandmother.png"
 import man from "../images/doctor-page/man-background.png"
 import woman from "../images/patient-page/woman.png"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function AddDiagnosticPatients() {
     const [details, setDetails] = useState({
         firstname: '',
@@ -18,8 +20,6 @@ export default function AddDiagnosticPatients() {
         respiratoryRate: '',
         age: ''
     })
-    const [errorMessage, setErrorMessage] = useState("");
-    const [errorMessage1, setErrorMessage1] = useState("");
     const onClick = async () => {
         const patient = await GetByIdentityNoApi(formData1.identityno);
         if (!patient.isError) {
@@ -50,22 +50,24 @@ export default function AddDiagnosticPatients() {
                 allergen: 'Allergen: ' + allergen,
                 heartRate: 'Heart rate: ' + heartRate + '(BPM)',
                 bloodPressure: 'Blood pressure: ' + bloodPressure + 'mmHg',
-                bloodSugar: 'Blood sugar: ' + bloodSugar + 'mg/dL'
-
+                bloodSugar: 'Blood sugar: ' + bloodSugar + 'mg/dL',
+                age: age
             })
         }
         else
         {
-            setErrorMessage("The patient with this identity no doesn't exist");
+            toast.error("The patient with this identity no doesn't exist");
         }
 
 
     }
 
     const saveClick = async () => {
-        const resp = await AddDetailsApi(diagnostic.diagnostic, diagnostic.treatment, formData1.identityno);
+        const resp = await AddDetailsApi(diagnostic.diagnostic, formData1.identityno);
         if(resp.isError)
-            setErrorMessage1("Invalid data");
+            toast.error("Invalid data");
+        else
+            toast.success("Insert successfully");
     }
 
     const [formData1, setFormData1] = useState({
@@ -96,6 +98,7 @@ export default function AddDiagnosticPatients() {
             }
         })
     }
+    console.log(details);
     let image = null;
     if (details.gender === "M" && details.age >= 60) {
         image = oldman;
@@ -112,10 +115,9 @@ export default function AddDiagnosticPatients() {
         <div>
             <div className="src-div">
                 <h2 className="txt">Identity no</h2>
-                <input name="identityno" value={formData1.identityno} type="search" className="input-search" onChange={handleFormData} />
+                <input name="identityno" value={formData1.identityno} type="search" className="input-search" onChange={handleFormData} autoComplete="off"/>
                 <div className="src-err">
                 <button className="src-button" onClick={onClick}>Search</button>
-                {errorMessage ? <p className='err-message-identity-no'>{errorMessage}</p> : <div className='no-er-message-identity-no'> </div>}
                 </div>
             </div>
             <div className="diagnostic-div">
@@ -144,17 +146,13 @@ export default function AddDiagnosticPatients() {
             </div>
             <div className="src-div">
                 <h2 className="txt">Diagnostic</h2>
-                <input name="diagnostic" type="search" className="input-search" value={diagnostic.diagnostic} onChange={handleFormDataDiagnostic} />
+                <input name="diagnostic" type="search" className="input-search" value={diagnostic.diagnostic} onChange={handleFormDataDiagnostic} autoComplete="off"/>
             </div>
 
-            <div className="src-div">
-                <h2 className="txt">Treatment</h2>
-                <textarea className="treatment-search" name="treatment" value={diagnostic.treatment} onChange={handleFormDataDiagnostic} placeholder="Drug1 frecvency/day, Drug2 frecvency/day ..."/>
-            </div>
             <div className="save-err">
-            {errorMessage1 ? <p className='err-message-save'>{errorMessage1}</p> : <div className='no-er-message-save'> </div>}
             <button className="sv-btn" onClick={saveClick}>Save</button>
             </div>
+            <ToastContainer />
         </div>
     )
 }

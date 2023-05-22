@@ -13,7 +13,9 @@ export default function LaboratoryTableRow({
                     className="input"
                     value={item.value} 
                     name="value"
-                    onChange={(e) => handleFieldChange(index, e)}/>
+                    onChange={(e) => handleFieldChange(index, e)}
+                    autoComplete="off"
+                    />
                 <h3 className="units-text">{item.units}</h3>
                 <h3 className="reference-range-text">{item.referenceRange}</h3>
             </div>

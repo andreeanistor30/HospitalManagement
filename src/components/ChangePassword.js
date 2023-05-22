@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/ChangePassword.css'
 import padlock from '../images/nurse-page/padlock.png'
 import ChangePasswordNurseApi from "../api/ChangePasswordNurseApi"
@@ -18,21 +20,28 @@ export default function ChangePassword(){
         })
     }
     const onClick = () =>{
+        let response = 0;
         if((JSON.parse(localStorage.getItem("user"))).user ==="nurse")
-            ChangePasswordNurseApi(formData.password,(JSON.parse(localStorage.getItem("user"))).phone);
+            response = ChangePasswordNurseApi(formData.password,(JSON.parse(localStorage.getItem("user"))).phone);
         else if((JSON.parse(localStorage.getItem("user"))).user ==="doctor")
-            ChangePasswordDoctorApi(formData.password,(JSON.parse(localStorage.getItem("user"))).phone);
+            response = ChangePasswordDoctorApi(formData.password,(JSON.parse(localStorage.getItem("user"))).phone);
         else 
-            ChangePasswordPatientApi(formData.password,(JSON.parse(localStorage.getItem("user"))).identityNo);
+            response = ChangePasswordPatientApi(formData.password,(JSON.parse(localStorage.getItem("user"))).identityNo);
+        if(response.isError === true)
+            toast.error("Error");
+        else
+            toast.success("Password changed successfully");
     }   
     return(
         <div className="div">
             <div className="changePassword-div">
             <img src={padlock} className="photo"/>
             <h2 className="changePassword-h2">New password</h2>
-            <input type="password" className="changePassword-input" onChange={handleFormData} name="password" value={formData.password}/>
+            <input type="password" className="changePassword-input" onChange={handleFormData} name="password" value={formData.password} autoComplete="off"/>
             <button onClick={onClick} className="changePassword-btn">Reset</button>
             </div>
+            <ToastContainer />
         </div>
+        
     )
 }

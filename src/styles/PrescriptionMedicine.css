@@ -1,0 +1,174 @@
+.medicine-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.medicine{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 25px;
+    margin-right: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.medicine-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 25px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.route{
+    width: 94px;
+    height: 24px;
+    margin-left: 400px;
+    margin-top: 30px;
+    margin-right: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.route-input{
+    width: 215px;
+    height: 24px;
+    margin-top: 30px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.add-treatment-btn{
+    width: 100px;
+    height: 30px;
+    margin-left: 400px;
+    margin-top: 30px;
+    background: #CCDBFD;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.header-medicine{
+    width: 1364px;
+    height: 35px;
+    margin-left: 50px;
+    margin-top: 50px;
+    background: #D7E3FC;
+    display: flex;
+    flex-direction: row;
+}
+
+.nr-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 64px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.medicine-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 185px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.noofdays-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.route-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.dosage-column{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+.header-med{
+    width: 1364px;
+    height: 35px;
+    margin-left: 50px;
+    margin-top: 0px;
+    background: #D7E3FC;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+}
+
+.even-row {
+    width: 1364px;
+    height: 35px;
+    margin-left: 50px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    background-color: #EDF2FB;
+  }
+  
+  .odd-row {
+    width: 1364px;
+    height: 35px;
+    margin-left: 50px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    background-color: #D7E3FC;
+  }

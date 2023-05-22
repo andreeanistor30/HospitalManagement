@@ -1,0 +1,85 @@
+.treatment-tablerow-div{
+    display: flex;
+    flex-direction: row;
+    background-color: #EDF2FB;
+    width: 1364px;
+    height: 35px;
+    margin-left: 50px;
+}
+
+.route-image{
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+    margin-top: 2px;
+}
+
+.medicine-h3{
+    width: 14px;
+    height: 26px;
+    margin-left: 90px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.route-h3{
+    width: 14px;
+    height: 26px;
+    margin-left: 220px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.dosage-h3{
+    width: 14px;
+    height: 26px;
+    margin-left: 230px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.noOfDays-h3{
+    width: 14px;
+    height: 26px;
+    margin-left: 250px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.instructions-h3{
+    width: 14px;
+    height: 26px;
+    margin-left: 200px;
+    margin-top: 5px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+    white-space: nowrap;
+}

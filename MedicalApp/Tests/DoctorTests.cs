@@ -30,11 +30,21 @@ namespace Tests
         }
 
         [Test]
-       public void GetPatientOfADoctor()
+        public void GetPatientOfADoctor()
         {
             var okResult = controller.GetPatients("John", "Doe");
 
             Assert.That(okResult is ActionResult<IEnumerable<Patient>>, Is.True);
+        }
+
+        [Test]
+        public void InsertDiagnosis()
+        {
+
+            var okResult = controller.InsertDiagnostic("Pneumonie", "q23fr5");
+
+            Assert.That(okResult is ActionResult<Patient>, Is.True);
+
         }
     }
 }

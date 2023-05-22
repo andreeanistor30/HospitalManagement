@@ -1,6 +1,5 @@
 import React from "react"
 import '../styles/TableHeader.css'
-import TableRow from '../components/TableRow'
 import '../styles/DropDownSearch.css'
 import GetByDoctorNameApi from "../api/GetByDoctorNameApi"
 import GetByPatientNameApi from "../api/GetByPatientNameApi"
@@ -32,7 +31,7 @@ export default function TableHeader({
             <option value="Doctor Name">Doctor Name</option>
             <option value="Pacient Name">Pacient Name</option>
         </select>
-        <input type="search" onChange = {onChange} className="search-input" value={inputValue} name={inputName}/>
+        <input type="search" onChange = {onChange} className="search-input" value={inputValue} name={inputName} autoComplete="off"/>
         <button className="search-button" onClick={onClick}>Search</button>
         </div>
         <div className="header-div">  

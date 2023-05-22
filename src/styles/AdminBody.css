@@ -1,0 +1,39 @@
+.ph-number-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.ph-number-h3{
+    width: 94px;
+    height: 24px;
+    margin-left: 30px;
+    margin-top: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+    white-space:nowrap;
+}
+
+.ph-number-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 40px;
+    margin-top: 0px;
+    background: #d7e3fc;
+    border:none;
+}
+
+.save-changes{
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 60px;
+    margin-left: 350px
+} 

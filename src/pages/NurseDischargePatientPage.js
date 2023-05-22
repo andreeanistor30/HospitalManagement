@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import image from "../images/nurse-page/nurse.png"
 import Header from "../components/Header"
 import TableHeader from "../components/TableHeader";
 import TableRow from "../components/TableRow";

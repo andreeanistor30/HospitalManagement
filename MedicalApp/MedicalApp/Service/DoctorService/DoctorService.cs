@@ -16,12 +16,11 @@ namespace MedicalApp.Service.DoctorService
             this.context = context;
         }
 
-        public Patient AddDetails(string diagnostic, string treatment, string identityno)
+        public Patient AddDetails(string diagnostic, string identityno)
         {
             var personalDetails = context.PersonalDetails.Where(p => p.IdentityNo.Equals(identityno)).FirstOrDefault();
             var patient = context.Patients.Where(p => p.Id == personalDetails.PatientId).FirstOrDefault();
             patient.Diagnostic = diagnostic;
-            patient.Treatment = treatment;
             context.SaveChanges();
             return patient;
         }
@@ -46,6 +45,12 @@ namespace MedicalApp.Service.DoctorService
 
             else
                 return false;
+        }
+
+        public List<Doctor> GetDoctors()
+        {
+            return  context.Doctors.ToList();
+
         }
 
         private string HashPassword(string password)

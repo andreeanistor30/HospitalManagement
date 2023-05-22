@@ -50,15 +50,13 @@ namespace MedicalApp.Service.PatientService
             };
 
             patient.Password = HashPassword(patient.Password);
-            var findDoctor = context.Doctors.Where(d => d.FirstName == patientDTO.DoctorName).FirstOrDefault();
-            if (findDoctor != null)
-            {
-                patient.DoctorId = findDoctor.Id;
-                context.Add(patient);
-                context.SaveChanges();
-                return patient;
-            }
-            else return null;
+            var drFirstName = patientDTO.DoctorName.Split(" ");
+            var findDoctor = context.Doctors.Where(d =>d.FirstName == drFirstName[0] && d.LastName == drFirstName[1]).FirstOrDefault();
+            patient.DoctorId = findDoctor.Id;
+            context.Add(patient);
+            context.SaveChanges();
+            return patient;
+
             
         }
 

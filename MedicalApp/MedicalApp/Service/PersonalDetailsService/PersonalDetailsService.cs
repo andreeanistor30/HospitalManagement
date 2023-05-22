@@ -1,5 +1,12 @@
 ﻿using MedicalApp.DataTransferObject;
 using MedicalApp.Models.Domain;
+using System.Buffers.Text;
+using System.Diagnostics.Metrics;
+using System.IO;
+using System.Runtime.ConstrainedExecution;
+using System.Text;
+using XAct.Library.Settings;
+using XAct;
 
 namespace MedicalApp.Service.NurseService
 {
@@ -14,7 +21,6 @@ namespace MedicalApp.Service.NurseService
 
         public PersonalDetails AddPersonalDetails(PersonalDetailsDTO personalDetailsDTO)
         {
-
             var patient = new PersonalDetails()
             {
                 DateOfBirth = personalDetailsDTO.DateOfBirth,
@@ -26,10 +32,9 @@ namespace MedicalApp.Service.NurseService
                 Nationality = personalDetailsDTO.Nationality,
                 Email = personalDetailsDTO.Email,
                 Age = DateTime.Now.Year - personalDetailsDTO.DateOfBirth.Year
-
             };
 
-            var patientId = context.Patients.Where(p => p.FirstName == personalDetailsDTO.FirstName && p.LastName == personalDetailsDTO.LastName).FirstOrDefault();
+            var patientId = context.Patients.FirstOrDefault(p => p.FirstName == personalDetailsDTO.FirstName && p.LastName == personalDetailsDTO.LastName);
             if (patientId != null)
             {
                 patient.PatientId = patientId.Id;
@@ -37,7 +42,9 @@ namespace MedicalApp.Service.NurseService
                 context.SaveChanges();
                 return patient;
             }
-            else return null;
+
+            return null;
         }
     }
+
 }

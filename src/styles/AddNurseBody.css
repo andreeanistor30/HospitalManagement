@@ -65,9 +65,36 @@
     width: 100px;
     height: 30px;
     margin-left: 1390px;
-    margin-top: 300px;
+    margin-top: 200px;
     background: #CCDBFD;
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.ident-no-h3{
+    width: 94px;
+    height: 24px;
+    margin-left: 80px;
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.ident-no-input{
+    width: 215px;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 20px;
+    background: #EDF2FB;
+    border:none;
+}
+
+.identity-div{
+    display: flex;
+    flex-direction: row;
 }

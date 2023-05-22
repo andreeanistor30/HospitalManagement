@@ -32,6 +32,9 @@ namespace MedicalApp.Models.Domain
 
         public VitalSigns VitalSigns { get; set; }
 
-        public IEnumerable<AnalysisResults> Results { get; set; }   
+        public IEnumerable<AnalysisResults> Results { get; set; }
+
+        public virtual ICollection<MedicalPrescription> MedicalPrescriptions { get; set; }
+
     }
 }

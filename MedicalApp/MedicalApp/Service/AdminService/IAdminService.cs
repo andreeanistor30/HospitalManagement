@@ -10,5 +10,6 @@ namespace MedicalApp.Service.AdminService
         public DoctorDTO AddDoctor(DoctorDTO doctorDTO);
 
         public AdminDTO AddAdmin(AdminDTO adminDTO);
+        public bool RemoveDoctorOrNurse(string identityNo, string type);
     }
 }

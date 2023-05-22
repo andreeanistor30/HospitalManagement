@@ -86,6 +86,10 @@ namespace MedicalApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("IdentityNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -167,6 +171,41 @@ namespace MedicalApp.Migrations
                     b.ToTable("LaboratoryAnalyses");
                 });
 
+            modelBuilder.Entity("MedicalApp.Models.Domain.MedicalPrescription", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Dosage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Instructions")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Medicine")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NoOfDays")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("PatientId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Route")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("MedicalPrescriptions");
+                });
+
             modelBuilder.Entity("MedicalApp.Models.Domain.Nurse", b =>
                 {
                     b.Property<Guid>("Id")
@@ -185,6 +224,10 @@ namespace MedicalApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdentityNo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -374,6 +417,15 @@ namespace MedicalApp.Migrations
                     b.Navigation("Patient");
                 });
 
+            modelBuilder.Entity("MedicalApp.Models.Domain.MedicalPrescription", b =>
+                {
+                    b.HasOne("MedicalApp.Models.Domain.Patient", null)
+                        .WithMany("MedicalPrescriptions")
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("MedicalApp.Models.Domain.Patient", b =>
                 {
                     b.HasOne("MedicalApp.Models.Domain.Doctor", "Doctor")
@@ -421,6 +473,8 @@ namespace MedicalApp.Migrations
                 {
                     b.Navigation("HomeAddress")
                         .IsRequired();
+
+                    b.Navigation("MedicalPrescriptions");
 
                     b.Navigation("PersonalDetails")
                         .IsRequired();

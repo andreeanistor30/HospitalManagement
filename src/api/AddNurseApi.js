@@ -1,6 +1,6 @@
 import axios from "axios"
 import {ADD_NURSE} from "../utils/UrlConstants"
-export default async (firstname, lastname, dateofbirth, address, phone, username, password, gender) => {
+export default async (firstname, lastname, dateofbirth, address, phone, username, password, gender,identityNo) => {
     try{
         const response = await axios.post(ADD_NURSE,{
             firstName: firstname,
@@ -10,7 +10,8 @@ export default async (firstname, lastname, dateofbirth, address, phone, username
             phone: phone,
             username: username,
             password: password,
-            gender: gender
+            gender: gender,
+            identityNo: identityNo
         })
         return response.data
     }catch(error){
